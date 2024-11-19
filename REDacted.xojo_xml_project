@@ -66,26 +66,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -113,31 +113,31 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
 <block type="Module" ID="1481844735">
- <ObjName>App</ObjName>
+ <ObjName>REDacted</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>MobileApplication</Superclass>
@@ -582,12 +582,15 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 36x36 Icon</Comment>
    <Device>1</Device>
    <Height>36</Height>
    <Orientation>0</Orientation>
-   <Platform>16</Platform>
+   <Platform>15</Platform>
    <Resolution>72</Resolution>
    <Width>36</Width>
    <HeightDouble>36</HeightDouble>
@@ -595,12 +598,15 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 48x48 Icon</Comment>
    <Device>1</Device>
    <Height>48</Height>
    <Orientation>0</Orientation>
-   <Platform>16</Platform>
+   <Platform>15</Platform>
    <Resolution>72</Resolution>
    <Width>48</Width>
    <HeightDouble>48</HeightDouble>
@@ -608,12 +614,15 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 72x72 Icon</Comment>
    <Device>1</Device>
    <Height>72</Height>
    <Orientation>0</Orientation>
-   <Platform>16</Platform>
+   <Platform>15</Platform>
    <Resolution>72</Resolution>
    <Width>72</Width>
    <HeightDouble>72</HeightDouble>
@@ -621,15 +630,15 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
-  <SaveInfo><Hex bytes="59">00F1D173010201000000001B443A5C52454461637465645C72656461637465642E63682E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
-  <FullPath>D:\REDacted\redacted.ch.png</FullPath>
-  <PartialPath>redacted.ch.png</PartialPath>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 96x96 Icon</Comment>
    <Device>1</Device>
    <Height>96</Height>
    <Orientation>0</Orientation>
-   <Platform>16</Platform>
+   <Platform>15</Platform>
    <Resolution>72</Resolution>
    <Width>96</Width>
    <HeightDouble>96</HeightDouble>
@@ -637,6 +646,9 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 144x144 Icon</Comment>
    <Device>1</Device>
@@ -650,6 +662,9 @@
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
+  <SaveInfo><Hex bytes="50">00F1D1730102010000000012443A5C52454461637465645C75702E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\up.png</FullPath>
+  <PartialPath>up.png</PartialPath>
   <ImageSpecification>
    <Comment>Android 192x192 Icon</Comment>
    <Device>1</Device>
@@ -696,6 +711,7 @@
    <SourceLine>StatIrcd = NoPic</SourceLine>
    <SourceLine>StatWWW= NoPic</SourceLine>
    <SourceLine>StatShout= NoPic</SourceLine>
+   <SourceLine>StatUserID= NoPic</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -710,7 +726,7 @@
    <SourceLine>If Me.Size.width &lt; Me.Size.height Then // portrait</SourceLine>
    <SourceLine>Username.Width = (Me.Size.Width / 9)*7</SourceLine>
    <SourceLine>Username.Left = (Me.Size.Width / 9) </SourceLine>
-   <SourceLine>Username.top = canvas1.Top + canvas1.Height + 15</SourceLine>
+   <SourceLine>Username.top = canvas1.Top + canvas1.Height + 20</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>//align in the dead center of the screen width</SourceLine>
    <SourceLine>canvas1.Left = (Me.Size.Width / 2) - (canvas1.Width / 2)</SourceLine>
@@ -718,7 +734,7 @@
    <SourceLine>canvas1.Top = (Me.Size.Height / 9)</SourceLine>
    <SourceLine>Else // landscape</SourceLine>
    <SourceLine>Username.Left = (Me.Size.Width / 5)  * 2.5</SourceLine>
-   <SourceLine>Username.top = canvas1.Top - 20</SourceLine>
+   <SourceLine>Username.top = canvas1.Top</SourceLine>
    <SourceLine>Username.Width = (Me.Size.Width / 9)*3.5</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>//align slightly left of center of the screen width</SourceLine>
@@ -731,21 +747,44 @@
    <SourceLine>auth2fa.Width = username.width</SourceLine>
    <SourceLine>Password.top = username.Top + username.Height + 15</SourceLine>
    <SourceLine>auth2fa.top = Password.Top + Password.Height + 15</SourceLine>
+   <SourceLine>ProgressWheel1.top = auth2fa.top + auth2fa.Height + 15</SourceLine>
    <SourceLine>Password.Left = username.Left</SourceLine>
    <SourceLine>auth2fa.Left = Username.Left</SourceLine>
+   <SourceLine>ProgressWheel1.Left = auth2fa.Left + ((auth2fa.Width /2) - (ProgressWheel1.Width/2))</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>statusweb.Left = auth2fa.Left</SourceLine>
-   <SourceLine>StatTracker.Left = statusweb.Left + statusweb.width +2</SourceLine>
-   <SourceLine>StatTrackerssl.Left = StatTracker.Left + StatTracker.Width + 2</SourceLine>
-   <SourceLine>StatusTrackerIrcd.Left = StatTrackerssl.Left + StatTrackerssl.Width + 2</SourceLine>
-   <SourceLine>StatusShout.Left = StatusTrackerIrcd.Left + StatusTrackerIrcd.Width + 2</SourceLine>
-   <SourceLine>statusweb.top = Self.size.Height - statusweb.Height - 7</SourceLine>
+   <SourceLine>StatTracker.Left = statusweb.Left + statusweb.width +15</SourceLine>
+   <SourceLine>StatTrackerssl.Left = StatTracker.Left + StatTracker.Width + 15</SourceLine>
+   <SourceLine>StatusTrackerIrcd.Left = StatTrackerssl.Left + StatTrackerssl.Width + 15</SourceLine>
+   <SourceLine>StatusShout.Left = StatusTrackerIrcd.Left + StatusTrackerIrcd.Width +15</SourceLine>
+   <SourceLine>StatID.Left = StatusShout.Left + StatusShout.Width + 15</SourceLine>
+   <SourceLine>statusweb.top = Self.size.Height - statusweb.Height - 50</SourceLine>
    <SourceLine>StatTracker.top = statusweb.top</SourceLine>
    <SourceLine>StatTrackerssl.top = statusweb.top</SourceLine>
    <SourceLine>StatusTrackerIrcd.top =statusweb.top</SourceLine>
    <SourceLine>StatusShout.top = statusweb.top</SourceLine>
+   <SourceLine>StatID.top = statusweb.top</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>DoLogin</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>970307583</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub DoLogin()</SourceLine>
+   <SourceLine>ProgressWheel1.Visible = True</SourceLine>
+   <SourceLine>ProgressWheel1.Refresh</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -827,6 +866,21 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>StatShout As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatUserID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1261447167</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatUserID As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatUserID As Picture</ItemDeclaration>
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -940,9 +994,33 @@
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>MobileTextField</Superclass>
+  <HookInstance>
+   <ItemName>ReturnPressed</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>18163711</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
+    <SourceLine>auth2fa.SetFocus</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>MobileTextField</Superclass>
+  <HookInstance>
+   <ItemName>ReturnPressed</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>567453695</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
+    <SourceLine>dologin</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>MobileCanvas</Superclass>
@@ -957,7 +1035,7 @@
     <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
     <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatusTracker, 0, 0, 32,32,0,0,512,512)</SourceLine>
+    <SourceLine>g.DrawPicture(StatusTracker, 0, 0, 48,48,0,0,512,512)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1027,13 +1105,20 @@
     <SourceLine>StatIrcd = ircred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatusTrackerIrcd.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "IRC" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("IRC").BooleanValue Then</SourceLine>
+    <SourceLine>// Access JSON values (replace "IRCTorrentAnnouncer" with the actual key in your JSON)</SourceLine>
+    <SourceLine>If jsonData.Value("IRCTorrentAnnouncer").BooleanValue Then</SourceLine>
     <SourceLine>StatShout = shoutblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatShout = shoutred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatusShout.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "IRCUserIdentifier" with the actual key in your JSON)</SourceLine>
+    <SourceLine>If jsonData.Value("IRCUserIdentifier").BooleanValue Then</SourceLine>
+    <SourceLine>StatUserID = idcardblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatUserID = idcardred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatID.Refresh</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>Catch e As JSONException</SourceLine>
     <SourceLine>// Handle JSON parsing errors</SourceLine>
@@ -1065,7 +1150,7 @@
     <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
     <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatusTrackerSSL, 0, 0, 32,32,0,0,512,512)</SourceLine>
+    <SourceLine>g.DrawPicture(StatusTrackerSSL, 0, 0, 48,48,0,0,512,512)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1083,7 +1168,7 @@
     <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
     <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatIrcd, 0, 0, 32,32,0,0,512,512)</SourceLine>
+    <SourceLine>g.DrawPicture(StatIrcd, 0, 0, 48,48,0,0,512,512)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1101,7 +1186,7 @@
     <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
     <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatWWW, 0, 0, 32,32,0,0,512,512)</SourceLine>
+    <SourceLine>g.DrawPicture(StatWWW, 0, 0, 48,48,0,0,512,512)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1119,7 +1204,28 @@
     <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
     <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
     <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatShout, 0, 0, 32,32,0,0,512,512)</SourceLine>
+    <SourceLine>g.DrawPicture(StatShout, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileProgressWheel</Superclass>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1483413503</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatUserID, 0, 0, 48,48,0,0,1536,1536)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1144,7 +1250,7 @@
   <PropertyVal Name="Width">384</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1845489663</PartID>
+  <PartID>1826834431</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1154,7 +1260,7 @@
   <PropertyVal Name="Alignment">1</PropertyVal>
   <PropertyVal Name="AllowSpellChecking">True</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">44</PropertyVal>
+  <PropertyVal Name="Height">50</PropertyVal>
   <PropertyVal Name="Hint">Username</PropertyVal>
   <PropertyVal Name="InputType">0</PropertyVal>
   <PropertyVal Name="Left">52</PropertyVal>
@@ -1178,7 +1284,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1673789439</PartID>
+  <PartID>1418309631</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1188,7 +1294,7 @@
   <PropertyVal Name="Alignment">1</PropertyVal>
   <PropertyVal Name="AllowSpellChecking">True</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">44</PropertyVal>
+  <PropertyVal Name="Height">50</PropertyVal>
   <PropertyVal Name="Hint">Password</PropertyVal>
   <PropertyVal Name="InputType">0</PropertyVal>
   <PropertyVal Name="Left">52</PropertyVal>
@@ -1212,7 +1318,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1683947519</PartID>
+  <PartID>1226696703</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1222,9 +1328,9 @@
   <PropertyVal Name="Alignment">1</PropertyVal>
   <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">44</PropertyVal>
+  <PropertyVal Name="Height">50</PropertyVal>
   <PropertyVal Name="Hint">2FA</PropertyVal>
-  <PropertyVal Name="InputType">0</PropertyVal>
+  <PropertyVal Name="InputType">3</PropertyVal>
   <PropertyVal Name="Left">52</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
@@ -1246,7 +1352,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>324255743</PartID>
+  <PartID>657858559</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1254,8 +1360,8 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">64</PropertyVal>
-  <PropertyVal Name="Left">92</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">60</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
@@ -1265,10 +1371,10 @@
   <PropertyVal Name="Super">MobileCanvas</PropertyVal>
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">64</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1260584959</PartID>
+  <PartID>1404921855</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1285,7 +1391,7 @@
   <PropertyVal Name="Top">0</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>459857919</PartID>
+  <PartID>634626047</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
@@ -1303,7 +1409,7 @@
   <PropertyVal Name="UserName"></PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1742143487</PartID>
+  <PartID>607543295</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1311,8 +1417,8 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">64</PropertyVal>
-  <PropertyVal Name="Left">164</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">100</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
@@ -1322,10 +1428,10 @@
   <PropertyVal Name="Super">MobileCanvas</PropertyVal>
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">64</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>391983103</PartID>
+  <PartID>1295515647</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1333,8 +1439,8 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">64</PropertyVal>
-  <PropertyVal Name="Left">236</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">140</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
@@ -1344,10 +1450,10 @@
   <PropertyVal Name="Super">MobileCanvas</PropertyVal>
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">64</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>923742207</PartID>
+  <PartID>2133084159</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1355,7 +1461,7 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">64</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
   <PropertyVal Name="Left">20</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
@@ -1366,10 +1472,10 @@
   <PropertyVal Name="Super">MobileCanvas</PropertyVal>
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">64</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1620971519</PartID>
+  <PartID>192958463</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1377,8 +1483,8 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">64</PropertyVal>
-  <PropertyVal Name="Left">40</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">180</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
@@ -1386,12 +1492,57 @@
   <PropertyVal Name="Name">StatusShout</PropertyVal>
   <PropertyVal Name="Scope">2</PropertyVal>
   <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">682</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">64</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>218302463</PartID>
+  <PartID>1920751615</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileProgressWheel</ControlClass>
+  <ItemName>MobileProgressWheel</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">175</PropertyVal>
+  <PropertyVal Name="Left">92</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">ProgressWheel1</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Shade">1</PropertyVal>
+  <PropertyVal Name="Super">MobileProgressWheel</PropertyVal>
+  <PropertyVal Name="Top">554</PropertyVal>
+  <PropertyVal Name="Visible">False</PropertyVal>
+  <PropertyVal Name="Width">175</PropertyVal>
+  <ControlIndex>11</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>797501439</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">220</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatID</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>12</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>585369599</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="1304657919">
@@ -1740,26 +1891,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -1787,26 +1938,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -1834,26 +1985,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -1881,26 +2032,120 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>512</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>512</Width>
-   <HeightDouble>512</HeightDouble>
-   <WidthDouble>512</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+</block>
+<block type="MultiImage" ID="535812095">
+ <ObjName>idcardred</ObjName>
+ <ObjContainerID>116721663</ObjContainerID>
+ <ItemName>idcardred</ItemName>
+ <ImageRepresentation>
+  <SaveInfo><Hex bytes="59">00F1D173010201000000001B443A5C52454461637465645C69642D636172642D7265642E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\id-card-red.png</FullPath>
+  <PartialPath>id-card-red.png</PartialPath>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>72</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+ <ImageRepresentation>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>144</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+ <ImageRepresentation>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>216</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+</block>
+<block type="MultiImage" ID="295639039">
+ <ObjName>idcardblue</ObjName>
+ <ObjContainerID>116721663</ObjContainerID>
+ <ItemName>idcardblue</ItemName>
+ <ImageRepresentation>
+  <SaveInfo><Hex bytes="60">00F1D173010201000000001C443A5C52454461637465645C69642D636172642D626C75652E706E670300000000010004000000000100000000000000</Hex></SaveInfo>
+  <FullPath>D:\REDacted\id-card-blue.png</FullPath>
+  <PartialPath>id-card-blue.png</PartialPath>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>72</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+ <ImageRepresentation>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>144</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
+  </ImageSpecification>
+ </ImageRepresentation>
+ <ImageRepresentation>
+  <ImageSpecification>
+   <Comment></Comment>
+   <Device>31</Device>
+   <Height>1536</Height>
+   <Orientation>0</Orientation>
+   <Platform>15</Platform>
+   <Resolution>216</Resolution>
+   <Width>1536</Width>
+   <HeightDouble>1536</HeightDouble>
+   <WidthDouble>1536</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -1923,16 +2168,16 @@
  </WarningPreferences>
  <IOSDebugDevice>Google Pixel 8 Pro (USB)</IOSDebugDevice>
  <StudioWindowState>
-  <EditBounds><Rect left="429" top="72" width="1012" height="569"/></EditBounds>
+  <EditBounds><Rect left="167" top="123" width="1012" height="568"/></EditBounds>
   <WindowMaximized>0</WindowMaximized>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Intro.relitavity</EditorLocation>
-    <EditorPath>Intro.</EditorPath>
+    <EditorLocation>Intro.Controls.ProgressWheel1</EditorLocation>
+    <EditorPath></EditorPath>
     <EditingPartID>1812776959</EditingPartID>
-    <EditorPath>Intro.</EditorPath>
+    <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
