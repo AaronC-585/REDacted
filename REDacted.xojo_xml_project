@@ -784,6 +784,7 @@
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub DoLogin()</SourceLine>
    <SourceLine>ProgressWheel1.Visible = True</SourceLine>
+   <SourceLine>ProgressWheel1.Enabled = True</SourceLine>
    <SourceLine>ProgressWheel1.Refresh</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1050,7 +1051,7 @@
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub Run()</SourceLine>
-    <SourceLine>statsck.Send("GET","https://red.trackerstatus.info/api/status/")</SourceLine>
+    <SourceLine>statsck.Send("GET","https://red.trackerstatus.info/api/all/")</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1068,52 +1069,59 @@
     <SourceLine></SourceLine>
     <SourceLine>// Variable for parsed JSON data</SourceLine>
     <SourceLine>Var jsonData As JSONItem</SourceLine>
+    <SourceLine>Var g As JSONItem</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>// Check if HTTP request was successful</SourceLine>
     <SourceLine>If (HTTPStatus = 200) Then</SourceLine>
     <SourceLine>// Check if the correct URL was accessed</SourceLine>
-    <SourceLine>If (URL = "https://red.trackerstatus.info/api/status/") Then</SourceLine>
+    <SourceLine>If (URL = "https://red.trackerstatus.info/api/all/") Then</SourceLine>
     <SourceLine>Try</SourceLine>
     <SourceLine>// Parse the JSON content</SourceLine>
     <SourceLine>jsonData = New JSONItem(content)</SourceLine>
     <SourceLine></SourceLine>
     <SourceLine>// Access JSON values (replace "Website" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("Website ").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("Website")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatWWW = ieblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatWWW = iered</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>Statusweb.Refresh</SourceLine>
     <SourceLine>// Access JSON values (replace "TrackerHTTP" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("TrackerHTTP").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("TrackerHTTP")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatusTracker = padlockulockblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatusTracker = padlockulockred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatTracker.Refresh</SourceLine>
     <SourceLine>// Access JSON values (replace "TrackerHTTPS" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("TrackerHTTPS").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("TrackerHTTPS")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatusTrackerSSL = padlockblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatusTrackerSSL = padlockred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatTrackerSSL.Refresh</SourceLine>
     <SourceLine>// Access JSON values (replace "IRC" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("IRC").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRC")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatIrcd = ircblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatIrcd = ircred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatusTrackerIrcd.Refresh</SourceLine>
     <SourceLine>// Access JSON values (replace "IRCTorrentAnnouncer" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("IRCTorrentAnnouncer").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRCTorrentAnnouncer")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatShout = shoutblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatShout = shoutred</SourceLine>
     <SourceLine>End If</SourceLine>
     <SourceLine>StatusShout.Refresh</SourceLine>
     <SourceLine>// Access JSON values (replace "IRCUserIdentifier" with the actual key in your JSON)</SourceLine>
-    <SourceLine>If jsonData.Value("IRCUserIdentifier").BooleanValue Then</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRCUserIdentifier")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
     <SourceLine>StatUserID = idcardblue</SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>StatUserID = idcardred</SourceLine>
@@ -1128,6 +1136,7 @@
     <SourceLine>// Optional: handle case where URL is not as expected</SourceLine>
     <SourceLine>MobilePopupMessage.Show("Unexpected URL accessed")</SourceLine>
     <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
     <SourceLine>Else</SourceLine>
     <SourceLine>// Handle HTTP request failure</SourceLine>
     <SourceLine>MobilePopupMessage.Show("HTTP request failed with status: " + HTTPStatus.ToString)</SourceLine>
@@ -1230,6 +1239,23 @@
    </ItemSource>
   </HookInstance>
  </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>Timer</Superclass>
+  <HookInstance>
+   <ItemName>Run</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <CodeDescription>zLogin</CodeDescription>
+   <PartID>1263656959</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Run()</SourceLine>
+    <SourceLine>ProgressWheel1.Refresh</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
   <ItemName>MobileCanvas</ItemName>
@@ -1250,7 +1276,7 @@
   <PropertyVal Name="Width">384</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1826834431</PartID>
+  <PartID>1793957887</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1284,7 +1310,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1418309631</PartID>
+  <PartID>1742442495</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1318,7 +1344,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1226696703</PartID>
+  <PartID>595662847</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1352,7 +1378,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>0</Locked>
-  <PartID>657858559</PartID>
+  <PartID>1055873023</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1374,7 +1400,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1404921855</PartID>
+  <PartID>638439423</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1391,7 +1417,7 @@
   <PropertyVal Name="Top">0</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>0</Locked>
-  <PartID>634626047</PartID>
+  <PartID>997046271</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
@@ -1409,7 +1435,7 @@
   <PropertyVal Name="UserName"></PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>0</Locked>
-  <PartID>607543295</PartID>
+  <PartID>1577119743</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1431,7 +1457,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1295515647</PartID>
+  <PartID>2003177471</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1453,7 +1479,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>0</Locked>
-  <PartID>2133084159</PartID>
+  <PartID>1118818303</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1475,7 +1501,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>0</Locked>
-  <PartID>192958463</PartID>
+  <PartID>1532338175</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1497,7 +1523,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>1920751615</PartID>
+  <PartID>1774225407</PartID>
  </Control>
  <Control>
   <ControlClass>MobileProgressWheel</ControlClass>
@@ -1520,7 +1546,7 @@
   <PropertyVal Name="Width">175</PropertyVal>
   <ControlIndex>11</ControlIndex>
   <Locked>0</Locked>
-  <PartID>797501439</PartID>
+  <PartID>418822143</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1542,7 +1568,24 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>12</ControlIndex>
   <Locked>0</Locked>
-  <PartID>585369599</PartID>
+  <PartID>1104343039</PartID>
+ </Control>
+ <Control>
+  <ControlClass>Timer</ControlClass>
+  <ItemName>Timer</ItemName>
+  <PropertyVal Name="Enabled">False</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="Name">zLogTimer</PropertyVal>
+  <PropertyVal Name="PanelIndex">-1</PropertyVal>
+  <PropertyVal Name="Parent"></PropertyVal>
+  <PropertyVal Name="Period">1</PropertyVal>
+  <PropertyVal Name="RunMode">2</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">Timer</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <ControlIndex>13</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1074200575</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="1304657919">
@@ -2079,26 +2122,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>1536</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>1536</Width>
-   <HeightDouble>1536</HeightDouble>
-   <WidthDouble>1536</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>1536</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>1536</Width>
-   <HeightDouble>1536</HeightDouble>
-   <WidthDouble>1536</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -2126,26 +2169,26 @@
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>1536</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>144</Resolution>
-   <Width>1536</Width>
-   <HeightDouble>1536</HeightDouble>
-   <WidthDouble>1536</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
  <ImageRepresentation>
   <ImageSpecification>
    <Comment></Comment>
    <Device>31</Device>
-   <Height>1536</Height>
+   <Height>-1</Height>
    <Orientation>0</Orientation>
    <Platform>15</Platform>
    <Resolution>216</Resolution>
-   <Width>1536</Width>
-   <HeightDouble>1536</HeightDouble>
-   <WidthDouble>1536</WidthDouble>
+   <Width>-1</Width>
+   <HeightDouble>-1</HeightDouble>
+   <WidthDouble>-1</WidthDouble>
   </ImageSpecification>
  </ImageRepresentation>
 </block>
@@ -2166,17 +2209,24 @@
   <ItemName>16</ItemName>
   <ItemData>0</ItemData>
  </WarningPreferences>
- <IOSDebugDevice>Google Pixel 8 Pro (USB)</IOSDebugDevice>
+ <IOSDebugDevice>Pixel 8 Pro API 34 (Emulator)</IOSDebugDevice>
  <StudioWindowState>
-  <EditBounds><Rect left="167" top="123" width="1012" height="568"/></EditBounds>
-  <WindowMaximized>0</WindowMaximized>
+  <EditBounds><Rect left="-6" top="-6" width="1292" height="732"/></EditBounds>
+  <WindowMaximized>1</WindowMaximized>
   <Editors>
-   <EditorCount>1</EditorCount>
+   <EditorCount>2</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Intro.Controls.ProgressWheel1</EditorLocation>
+    <EditorLocation>Intro.Controls.StatSck.ContentReceived</EditorLocation>
     <EditorPath></EditorPath>
     <EditingPartID>1812776959</EditingPartID>
+    <EditorPath></EditorPath>
+   </Editor>
+   <Editor>
+    <EditorIndex>1</EditorIndex>
+    <EditorLocation>REDacted</EditorLocation>
+    <EditorPath></EditorPath>
+    <EditingPartID>1481844735</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
