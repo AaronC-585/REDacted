@@ -38,6 +38,108 @@
  <OptimizationLevel>0</OptimizationLevel>
  <MacMinimumVersion></MacMinimumVersion>
 </block>
+<block type="Module" ID="358049791">
+ <ObjName>Globz</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>0</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Method>
+  <ItemName>ValidateTextField</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>952670207</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub ValidateTextField(inputField As MobileTextField, regexPattern As String, matchColor As Color, noMatchColor As Color)</SourceLine>
+   <SourceLine>Var rx As New RegEx</SourceLine>
+   <SourceLine>rx.SearchPattern = regexPattern</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Test the TextField's text with the regex</SourceLine>
+   <SourceLine>Var isMatch As Boolean = rx.Search(inputField.Text) &lt;&gt; Nil</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Change the TextField's background color based on the regex result</SourceLine>
+   <SourceLine>If isMatch Then</SourceLine>
+   <SourceLine>inputField.TextColor = matchColor</SourceLine>
+   <SourceLine>Else</SourceLine>
+   <SourceLine>inputField.textColor = noMatchColor</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>inputField As MobileTextField, regexPattern As String, matchColor As Color, noMatchColor As Color</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Property>
+  <ItemName>ZTextFont</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>171104255</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ZTextFont As font</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ZTextFont As font</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Sck</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1285920767</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sck As TCPSocket</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Sck As TCPSocket</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
 <block type="Folder" ID="116721663">
  <ObjName>images</ObjName>
  <ObjContainerID>0</ObjContainerID>
@@ -723,6 +825,9 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub relitavity()</SourceLine>
+   <SourceLine>Username.textFont = ZTextFont</SourceLine>
+   <SourceLine>password.textFont = ZTextFont</SourceLine>
+   <SourceLine>auth2fa.textFont = ZTextFont</SourceLine>
    <SourceLine>If Me.Size.width &lt; Me.Size.height Then // portrait</SourceLine>
    <SourceLine>Username.Width = (Me.Size.Width / 9)*7</SourceLine>
    <SourceLine>Username.Left = (Me.Size.Width / 9) </SourceLine>
@@ -783,9 +888,31 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub DoLogin()</SourceLine>
+   <SourceLine>'&lt;form Class="auth_form" name="login" id="loginform" method="post" action="login.php"&gt;</SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'Username</SourceLine>
+   <SourceLine>'&lt;Input type="text" name="username" id="username" Class="inputtext" required="required"</SourceLine>
+   <SourceLine>'maxlength="20" pattern="[A-Za-z0-9_?\.]{1,20}" title="Username, not email"</SourceLine>
+   <SourceLine>'autofocus="autofocus" autocomplete="username" placeholder="Username"/&gt;</SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'Password</SourceLine>
+   <SourceLine>'&lt;Input type="password" name="password" id="password" Class="inputtext" required="required"</SourceLine>
+   <SourceLine>'maxlength="100" pattern=".{8,100}" autocomplete="current-password" placeholder="Password"/&gt; </SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'2fa</SourceLine>
+   <SourceLine>'&lt;Input type="text" name="qrcode_confirm" id="authcodeinput" Class="inputtext"</SourceLine>
+   <SourceLine>'maxlength="6" pattern="[0-9]{6}" autocomplete="one-time-code" placeholder="Required if enabled"/&gt;</SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'remember me &lt;Input type="checkbox" id="keeplogged" name="keeplogged" value="1" /&gt;</SourceLine>
+   <SourceLine>'submit &lt;Input type="submit" name="login" value="Log in" Class="submit"/&gt;</SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'&lt;/form&gt;</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>ProgressWheel1.Visible = True</SourceLine>
    <SourceLine>ProgressWheel1.Enabled = True</SourceLine>
-   <SourceLine>ProgressWheel1.Refresh</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -992,6 +1119,30 @@
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>MobileTextField</Superclass>
+  <HookInstance>
+   <ItemName>TextChanged</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1111015423</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub TextChanged()</SourceLine>
+    <SourceLine>ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>Opening</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1047476223</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Opening()</SourceLine>
+    <SourceLine>ZTextFont = New Font("Arial", 25)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>MobileTextField</Superclass>
@@ -1005,6 +1156,18 @@
     <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
     <SourceLine>auth2fa.SetFocus</SourceLine>
     <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>TextChanged</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1879281663</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub TextChanged()</SourceLine>
+    <SourceLine>ValidateTextField(Me, ".{8,100}", color.black, Color.Red)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
  </ControlBehavior>
@@ -1256,6 +1419,12 @@
    </ItemSource>
   </HookInstance>
  </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileSwitch</Superclass>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileLabel</Superclass>
+ </ControlBehavior>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
   <ItemName>MobileCanvas</ItemName>
@@ -1275,8 +1444,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">384</PropertyVal>
   <ControlIndex>0</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1793957887</PartID>
+  <Locked>1</Locked>
+  <PartID>536479743</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1294,7 +1463,7 @@
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
   <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">40</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">20</PropertyVal>
   <PropertyVal Name="Name">Username</PropertyVal>
   <PropertyVal Name="Password">False</PropertyVal>
   <PropertyVal Name="ReadOnly">False</PropertyVal>
@@ -1309,8 +1478,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>1</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1742442495</PartID>
+  <Locked>1</Locked>
+  <PartID>1478221823</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1328,7 +1497,7 @@
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
   <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">40</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">100</PropertyVal>
   <PropertyVal Name="Name">Password</PropertyVal>
   <PropertyVal Name="Password">True</PropertyVal>
   <PropertyVal Name="ReadOnly">False</PropertyVal>
@@ -1343,8 +1512,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>2</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>595662847</PartID>
+  <Locked>1</Locked>
+  <PartID>596445183</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1362,7 +1531,7 @@
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
   <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">0</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">6</PropertyVal>
   <PropertyVal Name="Name">auth2fa</PropertyVal>
   <PropertyVal Name="Password">False</PropertyVal>
   <PropertyVal Name="ReadOnly">False</PropertyVal>
@@ -1377,8 +1546,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>3</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1055873023</PartID>
+  <Locked>1</Locked>
+  <PartID>1221591039</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1399,8 +1568,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>4</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>638439423</PartID>
+  <Locked>1</Locked>
+  <PartID>388818943</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1416,8 +1585,8 @@
   <PropertyVal Name="Super">Timer</PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
   <ControlIndex>5</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>997046271</PartID>
+  <Locked>1</Locked>
+  <PartID>417361919</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
@@ -1434,8 +1603,8 @@
   <PropertyVal Name="Top">0</PropertyVal>
   <PropertyVal Name="UserName"></PropertyVal>
   <ControlIndex>6</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1577119743</PartID>
+  <Locked>1</Locked>
+  <PartID>645160959</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1456,8 +1625,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>7</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>2003177471</PartID>
+  <Locked>1</Locked>
+  <PartID>605872127</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1478,8 +1647,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>8</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1118818303</PartID>
+  <Locked>1</Locked>
+  <PartID>1249087487</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1500,8 +1669,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>9</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1532338175</PartID>
+  <Locked>1</Locked>
+  <PartID>1160345599</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1522,8 +1691,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>10</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1774225407</PartID>
+  <Locked>1</Locked>
+  <PartID>927551487</PartID>
  </Control>
  <Control>
   <ControlClass>MobileProgressWheel</ControlClass>
@@ -1545,8 +1714,8 @@
   <PropertyVal Name="Visible">False</PropertyVal>
   <PropertyVal Name="Width">175</PropertyVal>
   <ControlIndex>11</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>418822143</PartID>
+  <Locked>1</Locked>
+  <PartID>590301183</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1567,8 +1736,8 @@
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>12</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1104343039</PartID>
+  <Locked>1</Locked>
+  <PartID>1239691263</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1584,8 +1753,58 @@
   <PropertyVal Name="Super">Timer</PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
   <ControlIndex>13</ControlIndex>
-  <Locked>0</Locked>
-  <PartID>1074200575</PartID>
+  <Locked>1</Locked>
+  <PartID>1411962879</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileSwitch</ControlClass>
+  <ItemName>MobileSwitch</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">30</PropertyVal>
+  <PropertyVal Name="Left">52</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">Switch1</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileSwitch</PropertyVal>
+  <PropertyVal Name="Top">554</PropertyVal>
+  <PropertyVal Name="Value">False</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">50</PropertyVal>
+  <ControlIndex>14</ControlIndex>
+  <Locked>1</Locked>
+  <PartID>995309567</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileLabel</ControlClass>
+  <ItemName>MobileLabel</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Alignment">0</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">30</PropertyVal>
+  <PropertyVal Name="Left">100</PropertyVal>
+  <PropertyVal Name="LineBreakMode">0</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">0</PropertyVal>
+  <PropertyVal Name="Name">Label1</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileLabel</PropertyVal>
+  <PropertyVal Name="Text">Remember Me</PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="Top">554</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">208</PropertyVal>
+  <ControlIndex>15</ControlIndex>
+  <Locked>1</Locked>
+  <PartID>1742929919</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="1304657919">
@@ -2211,22 +2430,15 @@
  </WarningPreferences>
  <IOSDebugDevice>Pixel 8 Pro API 34 (Emulator)</IOSDebugDevice>
  <StudioWindowState>
-  <EditBounds><Rect left="-6" top="-6" width="1292" height="732"/></EditBounds>
-  <WindowMaximized>1</WindowMaximized>
+  <EditBounds><Rect left="-5" top="1" width="1012" height="624"/></EditBounds>
+  <WindowMaximized>0</WindowMaximized>
   <Editors>
-   <EditorCount>2</EditorCount>
+   <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Intro.Controls.StatSck.ContentReceived</EditorLocation>
+    <EditorLocation>Globz.Sck</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1812776959</EditingPartID>
-    <EditorPath></EditorPath>
-   </Editor>
-   <Editor>
-    <EditorIndex>1</EditorIndex>
-    <EditorLocation>REDacted</EditorLocation>
-    <EditorPath></EditorPath>
-    <EditingPartID>1481844735</EditingPartID>
+    <EditingPartID>358049791</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
