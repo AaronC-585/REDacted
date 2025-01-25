@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RBProject version="2024r3.1" FormatVersion="2" MinIDEVersion="20190200">
+<RBProject version="2024r4.2" FormatVersion="2" MinIDEVersion="20190200">
 <block type="Project" ID="0">
- <ProjectSavedInVers>2024.031</ProjectSavedInVers>
+ <ProjectSavedInVers>2024.042</ProjectSavedInVers>
  <IDEVersion>20240301</IDEVersion>
  <MajorVersion>2024</MajorVersion>
  <MinorVersion>11</MinorVersion>
  <SubVersion>17</SubVersion>
  <Release>0</Release>
- <NonRelease>7</NonRelease>
+ <NonRelease>8</NonRelease>
  <Region></Region>
  <ShortVersion>1.0.0</ShortVersion>
  <LongVersion></LongVersion>
@@ -146,6 +146,21 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>w As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>RED_Base_Header</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>497162239</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>RED_Base_Header As string</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>RED_Base_Header As string</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -875,9 +890,16 @@
    <SourceLine>StatWWW= NoPic</SourceLine>
    <SourceLine>StatShout= NoPic</SourceLine>
    <SourceLine>StatUserID= NoPic</SourceLine>
-   <SourceLine>'sck.SSLEnabled = True</SourceLine>
-   <SourceLine>'sck.Address = "redacted.sh"</SourceLine>
-   <SourceLine>'sck.Port = 443</SourceLine>
+   <SourceLine>sck.SSLEnabled = True</SourceLine>
+   <SourceLine>sck.Address = "redacted.sh"</SourceLine>
+   <SourceLine>sck.Port = 443</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RED_Base_Header = "&lt;%method%&gt; /ajax.php?action=&lt;%act%&gt; HTTP/1.1" + Chr(13) + Chr (10) +  _</SourceLine>
+   <SourceLine>"Host: redacted.sh" + Chr(13) + Chr (10) +  _</SourceLine>
+   <SourceLine>"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0" + Chr(13) + Chr (10) +  _</SourceLine>
+   <SourceLine>"Authorization: &lt;%apiKEY%&gt;"+ Chr(13) + Chr (10) +  _</SourceLine>
+   <SourceLine>"Accept: Text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + Chr(13) + Chr (10) +  _</SourceLine>
+   <SourceLine>"Connection: close" + Chr(13) + Chr (10) + Chr(13) + Chr (10) + " "</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -891,10 +913,8 @@
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub relitavity()</SourceLine>
    <SourceLine>Username.textFont = ZTextFont</SourceLine>
-   <SourceLine>password.textFont = ZTextFont</SourceLine>
-   <SourceLine>auth2fa.textFont = ZTextFont</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>statusweb.Visible = (Switch1.top &lt; StatusWeb.Top) </SourceLine>
+   <SourceLine>statusweb.Visible = (Username.top &lt; StatusWeb.Top) </SourceLine>
    <SourceLine>StatTracker.Visible = statusweb.Visible</SourceLine>
    <SourceLine>StatTrackerssl.Visible = statusweb.Visible</SourceLine>
    <SourceLine>StatusTrackerIrcd.Visible =statusweb.Visible</SourceLine>
@@ -922,20 +942,7 @@
    <SourceLine>canvas1.Top = (Me.Size.Height / 2) - (canvas1.Height / 2)</SourceLine>
    <SourceLine>End If</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Password.Width = username.width</SourceLine>
-   <SourceLine>auth2fa.Width = username.width</SourceLine>
-   <SourceLine>Password.top = username.Top + username.Height + 15</SourceLine>
-   <SourceLine>auth2fa.top = Password.Top + Password.Height + 15</SourceLine>
-   <SourceLine>Switch1.Top = auth2fa.top + auth2fa.Height + 15</SourceLine>
-   <SourceLine>label1.top = Switch1.top</SourceLine>
-   <SourceLine>ProgressWheel1.top = auth2fa.top + auth2fa.Height + 15</SourceLine>
-   <SourceLine>Password.Left = username.Left</SourceLine>
-   <SourceLine>auth2fa.Left = Username.Left</SourceLine>
-   <SourceLine>Switch1.Left = Username.Left</SourceLine>
-   <SourceLine>label1.Left = Switch1.Left + Switch1.width + 2</SourceLine>
-   <SourceLine>ProgressWheel1.Left = auth2fa.Left + ((auth2fa.Width /2) - (ProgressWheel1.Width/2))</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>statusweb.Left = auth2fa.Left</SourceLine>
+   <SourceLine>statusweb.Left = Username.Left</SourceLine>
    <SourceLine>StatTracker.Left = statusweb.Left + statusweb.width +15</SourceLine>
    <SourceLine>StatTrackerssl.Left = StatTracker.Left + StatTracker.Width + 15</SourceLine>
    <SourceLine>StatusTrackerIrcd.Left = StatTrackerssl.Left + StatTrackerssl.Width + 15</SourceLine>
@@ -968,49 +975,10 @@
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub DoLogin()</SourceLine>
    <SourceLine>status.Enabled = False</SourceLine>
-   <SourceLine>//login form html source</SourceLine>
-   <SourceLine>'&lt;form Class="auth_form" name="login" id="loginform" method="post" action="login.php"&gt;</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'Username</SourceLine>
-   <SourceLine>'&lt;Input type="text" name="username" id="username" Class="inputtext" required="required"</SourceLine>
-   <SourceLine>'maxlength="20" pattern="[A-Za-z0-9_?\.]{1,20}" title="Username, not email"</SourceLine>
-   <SourceLine>'autofocus="autofocus" autocomplete="username" placeholder="Username"/&gt;</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'Password</SourceLine>
-   <SourceLine>'&lt;Input type="password" name="password" id="password" Class="inputtext" required="required"</SourceLine>
-   <SourceLine>'maxlength="100" pattern=".{8,100}" autocomplete="current-password" placeholder="Password"/&gt; </SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'2fa</SourceLine>
-   <SourceLine>'&lt;Input type="text" name="qrcode_confirm" id="authcodeinput" Class="inputtext"</SourceLine>
-   <SourceLine>'maxlength="6" pattern="[0-9]{6}" autocomplete="one-time-code" placeholder="Required if enabled"/&gt;</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'remember me &lt;Input type="checkbox" id="keeplogged" name="keeplogged" value="1" /&gt;</SourceLine>
-   <SourceLine>'submit &lt;Input type="submit" name="login" value="Log in" Class="submit"/&gt;</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'&lt;/form&gt;</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>//login form submission data</SourceLine>
+   <SourceLine>RED_Base_Header = RED_Base_Header.Replace("&lt;%apiKEY%&gt;", username.Text)</SourceLine>
+   <SourceLine>Pkt_Send(False, "index",RED_Base_Header)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Var DatForm() As String</SourceLine>
-   <SourceLine>DatForm.Add("username=" + EncodeURLComponent(Username.Text))</SourceLine>
-   <SourceLine>DatForm.Add("password=" + EncodeURLComponent(Password.Text))</SourceLine>
-   <SourceLine>DatForm.Add("qrcode_confirm=" + auth2fa.Text)</SourceLine>
-   <SourceLine>If Switch1.Value Then</SourceLine>
-   <SourceLine>DatForm.Add("keeplogged=1")</SourceLine>
-   <SourceLine>Else</SourceLine>
-   <SourceLine>DatForm.Add("keeplogged=0")</SourceLine>
-   <SourceLine>End If</SourceLine>
-   <SourceLine>DatForm.Add("login=Log in")</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Var LoginData As String = string.FromArray(DatForm,"&amp;")</SourceLine>
-   <SourceLine>ProgressWheel1.Visible = True</SourceLine>
-   <SourceLine>ProgressWheel1.Enabled = True</SourceLine>
-   <SourceLine>sck.SetRequestContent(LoginData,"application/x-www-form-urlencoded")</SourceLine>
-   <SourceLine>sck.RequestHeader("Referrer") = "https://redacted.sh/login.php"</SourceLine>
-   <SourceLine>sck.Send("POST","https://redacted.sh/login.php")</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>ProgressWheel1.Visible = False</SourceLine>
-   <SourceLine>ProgressWheel1.Enabled = False</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1019,6 +987,31 @@
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Pkt_Send</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1234327551</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Pkt_Send(post as Boolean, act as string, header as string)</SourceLine>
+   <SourceLine>sck.Connect</SourceLine>
+   <SourceLine>Do</SourceLine>
+   <SourceLine>Loop Until sck.SSLConnected</SourceLine>
+   <SourceLine>If post Then</SourceLine>
+   <SourceLine>sck.Write(header.Replace("&lt;%method%&gt;","POST").Replace("&lt;%act%&gt;",act))</SourceLine>
+   <SourceLine>Else</SourceLine>
+   <SourceLine>sck.Write(header.Replace("&lt;%method%&gt;","GET").Replace("&lt;%act%&gt;",act))</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>post as Boolean, act as string, header as string</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -1116,8 +1109,12 @@
  <PropertyVal Name="Modal">False</PropertyVal>
  <PropertyVal Name="HasNavigationBar">False</PropertyVal>
  <PropertyVal Name="Title">REDacted</PropertyVal>
- <PropertyVal Name="Index">-2147483648</PropertyVal>
  <ViewBehavior>
+  <ViewProperty>
+   <ObjName>ScaleFactor</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
   <ViewProperty>
    <ObjName>Name</ObjName>
    <Visible>1</Visible>
@@ -1227,7 +1224,7 @@
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub TextChanged()</SourceLine>
-    <SourceLine>ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
+    <SourceLine>'ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1243,45 +1240,15 @@
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileTextField</Superclass>
   <HookInstance>
    <ItemName>ReturnPressed</ItemName>
    <Compatibility></Compatibility>
    <Visible>1</Visible>
-   <PartID>18163711</PartID>
+   <PartID>368838655</PartID>
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
-    <SourceLine>auth2fa.SetFocus</SourceLine>
-    <SourceLine>End Function</SourceLine>
-   </ItemSource>
-  </HookInstance>
-  <HookInstance>
-   <ItemName>TextChanged</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1879281663</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub TextChanged()</SourceLine>
-    <SourceLine>ValidateTextField(Me, ".{8,100}", color.black, Color.Red)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileTextField</Superclass>
-  <HookInstance>
-   <ItemName>ReturnPressed</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>567453695</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
-    <SourceLine>dologin</SourceLine>
+    <SourceLine>DoLogin</SourceLine>
     <SourceLine>End Function</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1482,9 +1449,6 @@
   </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
-  <Superclass>MobileProgressWheel</Superclass>
- </ControlBehavior>
- <ControlBehavior>
   <Superclass>MobileCanvas</Superclass>
   <HookInstance>
    <ItemName>Paint</ItemName>
@@ -1503,50 +1467,7 @@
   </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
-  <Superclass>Timer</Superclass>
-  <HookInstance>
-   <ItemName>Run</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <CodeDescription>zLogin</CodeDescription>
-   <PartID>1263656959</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Run()</SourceLine>
-    <SourceLine>ProgressWheel1.Refresh</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileSwitch</Superclass>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileLabel</Superclass>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>URLConnection</Superclass>
-  <HookInstance>
-   <ItemName>ContentReceived</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1733750783</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</SourceLine>
-    <SourceLine>If Not (HTTPStatus = 200) Then</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString+ "] " + url)</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>If (URL = "https://redacted.sh/login.php") Then</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("Login Attempt ")</SourceLine>
-    <SourceLine>Var dd() As String =  content.ToArray(EndOfLine)</SourceLine>
-    <SourceLine>Var dd_cou As Integer = dd.LastIndex</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
+  <Superclass>SSLSocket</Superclass>
   <HookInstance>
    <ItemName>Error</ItemName>
    <Compatibility></Compatibility>
@@ -1558,6 +1479,32 @@
     <SourceLine>#If DebugBuild Then</SourceLine>
     <SourceLine>MobilePopupMessage.Show("ERROR - #" + e.ErrorNumber.ToString + EndOfLine + e.Message)</SourceLine>
     <SourceLine>#EndIf</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>DataAvailable</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>767727615</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub DataAvailable()</SourceLine>
+    <SourceLine>Var content(2) As String </SourceLine>
+    <SourceLine>content = sck.ReadAll.Split(Chr(13) + Chr(10)+Chr(13) + Chr(10))</SourceLine>
+    <SourceLine>Var header() As String = content(0).Split(Chr(13) + Chr(10))</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>'MobilePopupMessage.Show("[" + HTTPStatus.ToString+ "] " + url)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>'Select Case URL</SourceLine>
+    <SourceLine>'Case "https://redacted.sh/ajax.php?action=index"</SourceLine>
+    <SourceLine>'MobilePopupMessage.Show("Login Attempt ")</SourceLine>
+    <SourceLine>'Var dd() As String =  content.ToArray(EndOfLine)</SourceLine>
+    <SourceLine>'Var dd_cou As Integer = dd.LastIndex</SourceLine>
+    <SourceLine>'End Select</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1582,7 +1529,7 @@
   <PropertyVal Name="Width">384</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>1</Locked>
-  <PartID>66349055</PartID>
+  <PartID>1689671679</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1592,15 +1539,15 @@
   <PropertyVal Name="Alignment">1</PropertyVal>
   <PropertyVal Name="AllowSpellChecking">True</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">50</PropertyVal>
-  <PropertyVal Name="Hint">Username</PropertyVal>
+  <PropertyVal Name="Height">100</PropertyVal>
+  <PropertyVal Name="Hint">API Key</PropertyVal>
   <PropertyVal Name="InputType">0</PropertyVal>
   <PropertyVal Name="Left">52</PropertyVal>
   <PropertyVal Name="LockBottom">False</PropertyVal>
   <PropertyVal Name="LockLeft">False</PropertyVal>
   <PropertyVal Name="LockRight">False</PropertyVal>
   <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">20</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">128</PropertyVal>
   <PropertyVal Name="Name">Username</PropertyVal>
   <PropertyVal Name="Password">False</PropertyVal>
   <PropertyVal Name="ReadOnly">False</PropertyVal>
@@ -1616,75 +1563,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1693315071</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileTextField</ControlClass>
-  <ItemName>MobileTextField</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Alignment">1</PropertyVal>
-  <PropertyVal Name="AllowSpellChecking">True</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">50</PropertyVal>
-  <PropertyVal Name="Hint">Password</PropertyVal>
-  <PropertyVal Name="InputType">0</PropertyVal>
-  <PropertyVal Name="Left">52</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">100</PropertyVal>
-  <PropertyVal Name="Name">Password</PropertyVal>
-  <PropertyVal Name="Password">True</PropertyVal>
-  <PropertyVal Name="ReadOnly">False</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="SelectedText"></PropertyVal>
-  <PropertyVal Name="SelectionLength">0</PropertyVal>
-  <PropertyVal Name="SelectionStart">0</PropertyVal>
-  <PropertyVal Name="Super">MobileTextField</PropertyVal>
-  <PropertyVal Name="Text"></PropertyVal>
-  <PropertyVal Name="TextColor">0</PropertyVal>
-  <PropertyVal Name="Top">444</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">256</PropertyVal>
-  <ControlIndex>2</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1681002495</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileTextField</ControlClass>
-  <ItemName>MobileTextField</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Alignment">1</PropertyVal>
-  <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">50</PropertyVal>
-  <PropertyVal Name="Hint">2FA</PropertyVal>
-  <PropertyVal Name="InputType">3</PropertyVal>
-  <PropertyVal Name="Left">52</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">6</PropertyVal>
-  <PropertyVal Name="Name">auth2fa</PropertyVal>
-  <PropertyVal Name="Password">False</PropertyVal>
-  <PropertyVal Name="ReadOnly">False</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="SelectedText"></PropertyVal>
-  <PropertyVal Name="SelectionLength">0</PropertyVal>
-  <PropertyVal Name="SelectionStart">0</PropertyVal>
-  <PropertyVal Name="Super">MobileTextField</PropertyVal>
-  <PropertyVal Name="Text"></PropertyVal>
-  <PropertyVal Name="TextColor">0</PropertyVal>
-  <PropertyVal Name="Top">496</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">256</PropertyVal>
-  <ControlIndex>3</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1731284991</PartID>
+  <PartID>78307327</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1704,9 +1583,9 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>4</ControlIndex>
+  <ControlIndex>2</ControlIndex>
   <Locked>1</Locked>
-  <PartID>220350463</PartID>
+  <PartID>179367935</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1721,14 +1600,15 @@
   <PropertyVal Name="Scope">2</PropertyVal>
   <PropertyVal Name="Super">Timer</PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
-  <ControlIndex>5</ControlIndex>
+  <ControlIndex>3</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1419116543</PartID>
+  <PartID>152741887</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
   <ItemName>URLConnection</ItemName>
   <PropertyVal Name="AllowCertificateValidation">False</PropertyVal>
+  <PropertyVal Name="FollowRedirects">True</PropertyVal>
   <PropertyVal Name="HTTPStatusCode">0</PropertyVal>
   <PropertyVal Name="Left">0</PropertyVal>
   <PropertyVal Name="Name">StatSck</PropertyVal>
@@ -1739,9 +1619,9 @@
   <PropertyVal Name="Super">URLConnection</PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
   <PropertyVal Name="UserName"></PropertyVal>
-  <ControlIndex>6</ControlIndex>
+  <ControlIndex>4</ControlIndex>
   <Locked>1</Locked>
-  <PartID>253829119</PartID>
+  <PartID>16414719</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1761,9 +1641,9 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>7</ControlIndex>
+  <ControlIndex>5</ControlIndex>
   <Locked>1</Locked>
-  <PartID>31844351</PartID>
+  <PartID>1013893119</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1783,9 +1663,9 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>8</ControlIndex>
+  <ControlIndex>6</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1544824831</PartID>
+  <PartID>1050714111</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1805,9 +1685,9 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>9</ControlIndex>
+  <ControlIndex>7</ControlIndex>
   <Locked>1</Locked>
-  <PartID>85567487</PartID>
+  <PartID>1446866943</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1827,32 +1707,9 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>10</ControlIndex>
+  <ControlIndex>8</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1007085567</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileProgressWheel</ControlClass>
-  <ItemName>MobileProgressWheel</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">175</PropertyVal>
-  <PropertyVal Name="Left">92</PropertyVal>
-  <PropertyVal Name="LockBottom">True</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">True</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">ProgressWheel1</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Shade">1</PropertyVal>
-  <PropertyVal Name="Super">MobileProgressWheel</PropertyVal>
-  <PropertyVal Name="Top">554</PropertyVal>
-  <PropertyVal Name="Visible">False</PropertyVal>
-  <PropertyVal Name="Width">175</PropertyVal>
-  <ControlIndex>11</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1869088767</PartID>
+  <PartID>1103996927</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1872,94 +1729,21 @@
   <PropertyVal Name="Top">662</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
   <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>12</ControlIndex>
+  <ControlIndex>9</ControlIndex>
   <Locked>1</Locked>
-  <PartID>285794303</PartID>
+  <PartID>763637759</PartID>
  </Control>
  <Control>
-  <ControlClass>Timer</ControlClass>
-  <ItemName>Timer</ItemName>
-  <PropertyVal Name="Enabled">False</PropertyVal>
-  <PropertyVal Name="Left">0</PropertyVal>
-  <PropertyVal Name="Name">zLogTimer</PropertyVal>
-  <PropertyVal Name="PanelIndex">-1</PropertyVal>
-  <PropertyVal Name="Parent"></PropertyVal>
-  <PropertyVal Name="Period">1</PropertyVal>
-  <PropertyVal Name="RunMode">2</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">Timer</PropertyVal>
-  <PropertyVal Name="Top">0</PropertyVal>
-  <ControlIndex>13</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>837265407</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileSwitch</ControlClass>
-  <ItemName>MobileSwitch</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">30</PropertyVal>
-  <PropertyVal Name="Left">52</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">Switch1</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileSwitch</PropertyVal>
-  <PropertyVal Name="Top">554</PropertyVal>
-  <PropertyVal Name="Value">False</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">50</PropertyVal>
-  <ControlIndex>14</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>559009791</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileLabel</ControlClass>
-  <ItemName>MobileLabel</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Alignment">0</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">30</PropertyVal>
-  <PropertyVal Name="Left">100</PropertyVal>
-  <PropertyVal Name="LineBreakMode">0</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">0</PropertyVal>
-  <PropertyVal Name="Name">Label1</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileLabel</PropertyVal>
-  <PropertyVal Name="Text">Remember Me</PropertyVal>
-  <PropertyVal Name="TextColor">0</PropertyVal>
-  <PropertyVal Name="Top">554</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">208</PropertyVal>
-  <ControlIndex>15</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1381783551</PartID>
- </Control>
- <Control>
-  <ControlClass>URLConnection</ControlClass>
-  <ItemName>URLConnection</ItemName>
-  <PropertyVal Name="AllowCertificateValidation">False</PropertyVal>
-  <PropertyVal Name="HTTPStatusCode">0</PropertyVal>
-  <PropertyVal Name="Left">0</PropertyVal>
+  <ControlClass>SSLSocket</ControlClass>
+  <ItemName>SSLSocket</ItemName>
+  <PropertyVal Name="Address"></PropertyVal>
   <PropertyVal Name="Name">sck</PropertyVal>
-  <PropertyVal Name="PanelIndex">-1</PropertyVal>
-  <PropertyVal Name="Parent"></PropertyVal>
-  <PropertyVal Name="Password"></PropertyVal>
+  <PropertyVal Name="Port">0</PropertyVal>
   <PropertyVal Name="Scope">0</PropertyVal>
-  <PropertyVal Name="Super">URLConnection</PropertyVal>
-  <PropertyVal Name="Top">0</PropertyVal>
-  <PropertyVal Name="UserName"></PropertyVal>
-  <ControlIndex>16</ControlIndex>
+  <PropertyVal Name="Super">SSLSocket</PropertyVal>
+  <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>576833535</PartID>
+  <PartID>46059519</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="1304657919">
@@ -1985,6 +1769,7 @@
 <block type="SignProjectScriptStep" ID="176713727">
  <ObjName>Sign</ObjName>
  <ObjContainerID>2042968063</ObjContainerID>
+ <DeveloperID></DeveloperID>
 </block>
 <block type="BuildStepsList" ID="298831871">
  <ObjName>Windows</ObjName>
@@ -2667,18 +2452,19 @@
   <PartID>1812776959</PartID>
   <ItemName>sck</ItemName>
   <UnitType>Event Handler</UnitType>
-  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
-  <lineNum>8</lineNum>
+  <UnitID>Sub DataAvailable()</UnitID>
+  <lineNum>3</lineNum>
  </BreakPointGroup>
  <StudioWindowState>
-  <EditBounds><Rect left="258" top="51" width="1012" height="624"/></EditBounds>
+  <EditBounds><Rect left="63" top="238" width="1013" height="624"/></EditBounds>
   <WindowMaximized>0</WindowMaximized>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation></EditorLocation>
+    <EditorLocation>Intro.Opening</EditorLocation>
     <EditorPath></EditorPath>
+    <EditingPartID>1812776959</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
