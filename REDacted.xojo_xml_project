@@ -150,17 +150,17 @@
   <IsShared>0</IsShared>
  </Property>
  <Property>
-  <ItemName>RED_Base_Header</ItemName>
+  <ItemName>apiKey</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <PartID>497162239</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>RED_Base_Header As string</SourceLine>
+   <SourceLine>apiKey As string</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>RED_Base_Header As string</ItemDeclaration>
+  <ItemDeclaration>apiKey As string</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -214,7 +214,23 @@
    <PropertyGroup>Behavior</PropertyGroup>
    <ItemType>Double</ItemType>
   </ViewProperty>
+  <ViewProperty>
+   <ObjName>apiKey</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>string</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
  </ViewBehavior>
+ <Constant>
+  <ItemName>REDbase</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>551542783</PartID>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemType>0</ItemType>
+  <ItemDef>https://redacted.sh:443/ajax.php?action=</ItemDef>
+  <ItemFlags>0</ItemFlags>
+ </Constant>
 </block>
 <block type="Folder" ID="116721663">
  <ObjName>images</ObjName>
@@ -890,17 +906,8 @@
    <SourceLine>StatWWW= NoPic</SourceLine>
    <SourceLine>StatShout= NoPic</SourceLine>
    <SourceLine>StatUserID= NoPic</SourceLine>
-   <SourceLine>sck.SSLEnabled = True</SourceLine>
-   <SourceLine>sck.Address = "redacted.sh"</SourceLine>
-   <SourceLine>sck.Port = 443</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>RED_Base_Header = "&lt;%method%&gt; /ajax.php?action=&lt;%act%&gt; HTTP/1.1" + Chr(13) + Chr (10) +  _</SourceLine>
-   <SourceLine>"Host: redacted.sh" + Chr(13) + Chr (10) +  _</SourceLine>
-   <SourceLine>"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0" + Chr(13) + Chr (10) +  _</SourceLine>
-   <SourceLine>"Authorization: &lt;%apiKEY%&gt;"+ Chr(13) + Chr (10) +  _</SourceLine>
-   <SourceLine>"Accept: Text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + Chr(13) + Chr (10) +  _</SourceLine>
-   <SourceLine>"Connection: close" + Chr(13) + Chr (10) + Chr(13) + Chr (10) + " "</SourceLine>
-   <SourceLine></SourceLine>
+   <SourceLine>DATsck.FollowRedirects = True</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -967,51 +974,22 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>DoLogin</ItemName>
+  <ItemName>GetSomethin</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
-  <PartID>970307583</PartID>
+  <PartID>528615423</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub DoLogin()</SourceLine>
-   <SourceLine>status.Enabled = False</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>RED_Base_Header = RED_Base_Header.Replace("&lt;%apiKEY%&gt;", username.Text)</SourceLine>
-   <SourceLine>Pkt_Send(False, "index",RED_Base_Header)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams></ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>Pkt_Send</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>1234327551</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Pkt_Send(post as Boolean, act as string, header as string)</SourceLine>
-   <SourceLine>sck.Connect</SourceLine>
-   <SourceLine>Do</SourceLine>
-   <SourceLine>Loop Until sck.SSLConnected</SourceLine>
-   <SourceLine>If post Then</SourceLine>
-   <SourceLine>sck.Write(header.Replace("&lt;%method%&gt;","POST").Replace("&lt;%act%&gt;",act))</SourceLine>
-   <SourceLine>Else</SourceLine>
-   <SourceLine>sck.Write(header.Replace("&lt;%method%&gt;","GET").Replace("&lt;%act%&gt;",act))</SourceLine>
-   <SourceLine>End If</SourceLine>
+   <SourceLine>Sub GetSomethin(act As String)</SourceLine>
+   <SourceLine>DATsck.RequestHeader("Authorization") = apiKey</SourceLine>
+   <SourceLine>DATsck.send("GET", REDbase + act)</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>post as Boolean, act as string, header as string</ItemParams>
+  <ItemParams>act As String</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -1225,6 +1203,12 @@
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub TextChanged()</SourceLine>
     <SourceLine>'ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
+    <SourceLine>If fz_.Exists Then fz_.Remove</SourceLine>
+    <SourceLine>Var fz2_ As TextOutputStream  = TextOutputStream.Create(fz_)</SourceLine>
+    <SourceLine>fz2_.write(Me.Text)</SourceLine>
+    <SourceLine>fz2_.Close</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1237,6 +1221,15 @@
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub Opening()</SourceLine>
     <SourceLine>ZTextFont = New Font("Arial", 25)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
+    <SourceLine>If fz_.Exists Then</SourceLine>
+    <SourceLine>Var fz2_ As TextinputStream  = TextinputStream.Open(fz_)</SourceLine>
+    <SourceLine>Me.Text =  fz2_.readall</SourceLine>
+    <SourceLine>apiKey = Me.Text</SourceLine>
+    <SourceLine>fz2_.Close</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1248,7 +1241,8 @@
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
-    <SourceLine>DoLogin</SourceLine>
+    <SourceLine>apiKey = Me.Text</SourceLine>
+    <SourceLine>GetSomethin("index")</SourceLine>
     <SourceLine>End Function</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1467,7 +1461,7 @@
   </HookInstance>
  </ControlBehavior>
  <ControlBehavior>
-  <Superclass>SSLSocket</Superclass>
+  <Superclass>URLConnection</Superclass>
   <HookInstance>
    <ItemName>Error</ItemName>
    <Compatibility></Compatibility>
@@ -1483,28 +1477,25 @@
    </ItemSource>
   </HookInstance>
   <HookInstance>
-   <ItemName>DataAvailable</ItemName>
+   <ItemName>ContentReceived</ItemName>
    <Compatibility></Compatibility>
    <Visible>1</Visible>
-   <PartID>767727615</PartID>
+   <PartID>1825490943</PartID>
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub DataAvailable()</SourceLine>
-    <SourceLine>Var content(2) As String </SourceLine>
-    <SourceLine>content = sck.ReadAll.Split(Chr(13) + Chr(10)+Chr(13) + Chr(10))</SourceLine>
-    <SourceLine>Var header() As String = content(0).Split(Chr(13) + Chr(10))</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>'MobilePopupMessage.Show("[" + HTTPStatus.ToString+ "] " + url)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>'Select Case URL</SourceLine>
-    <SourceLine>'Case "https://redacted.sh/ajax.php?action=index"</SourceLine>
-    <SourceLine>'MobilePopupMessage.Show("Login Attempt ")</SourceLine>
-    <SourceLine>'Var dd() As String =  content.ToArray(EndOfLine)</SourceLine>
-    <SourceLine>'Var dd_cou As Integer = dd.LastIndex</SourceLine>
-    <SourceLine>'End Select</SourceLine>
+    <SourceLine>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</SourceLine>
+    <SourceLine>Var fff As String =url.Replace(REDbase,"")</SourceLine>
+    <SourceLine>Select Case HTTPStatus</SourceLine>
+    <SourceLine>Case 200</SourceLine>
+    <SourceLine>Select Case fff</SourceLine>
+    <SourceLine>Case "index"</SourceLine>
+    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] index")</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] " + fff)</SourceLine>
+    <SourceLine>End Select</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] " + fff)</SourceLine>
+    <SourceLine>End Select</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
@@ -1529,7 +1520,7 @@
   <PropertyVal Name="Width">384</PropertyVal>
   <ControlIndex>0</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1689671679</PartID>
+  <PartID>1574707199</PartID>
  </Control>
  <Control>
   <ControlClass>MobileTextField</ControlClass>
@@ -1537,7 +1528,7 @@
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Alignment">1</PropertyVal>
-  <PropertyVal Name="AllowSpellChecking">True</PropertyVal>
+  <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
   <PropertyVal Name="Height">100</PropertyVal>
   <PropertyVal Name="Hint">API Key</PropertyVal>
@@ -1549,7 +1540,7 @@
   <PropertyVal Name="LockTop">False</PropertyVal>
   <PropertyVal Name="MaximumCharactersAllowed">128</PropertyVal>
   <PropertyVal Name="Name">Username</PropertyVal>
-  <PropertyVal Name="Password">False</PropertyVal>
+  <PropertyVal Name="Password">True</PropertyVal>
   <PropertyVal Name="ReadOnly">False</PropertyVal>
   <PropertyVal Name="Scope">2</PropertyVal>
   <PropertyVal Name="SelectedText"></PropertyVal>
@@ -1563,7 +1554,7 @@
   <PropertyVal Name="Width">256</PropertyVal>
   <ControlIndex>1</ControlIndex>
   <Locked>1</Locked>
-  <PartID>78307327</PartID>
+  <PartID>279085055</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1585,7 +1576,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>2</ControlIndex>
   <Locked>1</Locked>
-  <PartID>179367935</PartID>
+  <PartID>127309823</PartID>
  </Control>
  <Control>
   <ControlClass>Timer</ControlClass>
@@ -1602,7 +1593,7 @@
   <PropertyVal Name="Top">0</PropertyVal>
   <ControlIndex>3</ControlIndex>
   <Locked>1</Locked>
-  <PartID>152741887</PartID>
+  <PartID>69531647</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
@@ -1621,7 +1612,7 @@
   <PropertyVal Name="UserName"></PropertyVal>
   <ControlIndex>4</ControlIndex>
   <Locked>1</Locked>
-  <PartID>16414719</PartID>
+  <PartID>717785087</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1643,7 +1634,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>5</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1013893119</PartID>
+  <PartID>482789375</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1665,7 +1656,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>6</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1050714111</PartID>
+  <PartID>1216057343</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1687,7 +1678,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>7</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1446866943</PartID>
+  <PartID>2076809215</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1709,7 +1700,7 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>8</ControlIndex>
   <Locked>1</Locked>
-  <PartID>1103996927</PartID>
+  <PartID>366471167</PartID>
  </Control>
  <Control>
   <ControlClass>MobileCanvas</ControlClass>
@@ -1731,19 +1722,26 @@
   <PropertyVal Name="Width">48</PropertyVal>
   <ControlIndex>9</ControlIndex>
   <Locked>1</Locked>
-  <PartID>763637759</PartID>
+  <PartID>1165967359</PartID>
  </Control>
  <Control>
-  <ControlClass>SSLSocket</ControlClass>
-  <ItemName>SSLSocket</ItemName>
-  <PropertyVal Name="Address"></PropertyVal>
-  <PropertyVal Name="Name">sck</PropertyVal>
-  <PropertyVal Name="Port">0</PropertyVal>
+  <ControlClass>URLConnection</ControlClass>
+  <ItemName>URLConnection</ItemName>
+  <PropertyVal Name="AllowCertificateValidation">False</PropertyVal>
+  <PropertyVal Name="FollowRedirects">True</PropertyVal>
+  <PropertyVal Name="HTTPStatusCode">0</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="Name">DATsck</PropertyVal>
+  <PropertyVal Name="PanelIndex">-1</PropertyVal>
+  <PropertyVal Name="Parent"></PropertyVal>
+  <PropertyVal Name="Password"></PropertyVal>
   <PropertyVal Name="Scope">0</PropertyVal>
-  <PropertyVal Name="Super">SSLSocket</PropertyVal>
+  <PropertyVal Name="Super">URLConnection</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="UserName"></PropertyVal>
   <ControlIndex>10</ControlIndex>
   <Locked>0</Locked>
-  <PartID>46059519</PartID>
+  <PartID>459698175</PartID>
  </Control>
 </block>
 <block type="BuildAutomation" ID="1304657919">
@@ -2448,23 +2446,16 @@
   <ItemData>0</ItemData>
  </WarningPreferences>
  <IOSDebugDevice>Google Pixel 8 Pro (USB)</IOSDebugDevice>
- <BreakPointGroup>
-  <PartID>1812776959</PartID>
-  <ItemName>sck</ItemName>
-  <UnitType>Event Handler</UnitType>
-  <UnitID>Sub DataAvailable()</UnitID>
-  <lineNum>3</lineNum>
- </BreakPointGroup>
  <StudioWindowState>
-  <EditBounds><Rect left="63" top="238" width="1013" height="624"/></EditBounds>
+  <EditBounds><Rect left="254" top="89" width="1013" height="806"/></EditBounds>
   <WindowMaximized>0</WindowMaximized>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Intro.Opening</EditorLocation>
+    <EditorLocation>Globz.GACC</EditorLocation>
     <EditorPath></EditorPath>
-    <EditingPartID>1812776959</EditingPartID>
+    <EditingPartID>358049791</EditingPartID>
     <EditorPath></EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
