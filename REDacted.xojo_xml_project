@@ -7,7 +7,7 @@
  <MinorVersion>11</MinorVersion>
  <SubVersion>17</SubVersion>
  <Release>0</Release>
- <NonRelease>8</NonRelease>
+ <NonRelease>10</NonRelease>
  <Region></Region>
  <ShortVersion>1.0.0</ShortVersion>
  <LongVersion></LongVersion>
@@ -164,6 +164,21 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
+ <Property>
+  <ItemName>REDme</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>333682687</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>REDme As reduser</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>REDme As reduser</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -231,6 +246,15 @@
   <ItemDef>https://redacted.sh:443/ajax.php?action=</ItemDef>
   <ItemFlags>0</ItemFlags>
  </Constant>
+ <Structure>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemName>Untitled</ItemName>
+  <ItemFlags>0</ItemFlags>
+  <ItemName>Untitled</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>296077311</PartID>
+ </Structure>
 </block>
 <block type="Folder" ID="116721663">
  <ObjName>images</ObjName>
@@ -900,12 +924,7 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub Opening()</SourceLine>
-   <SourceLine>StatusTracker = NoPic</SourceLine>
-   <SourceLine>StatusTrackerSSL = NoPic</SourceLine>
-   <SourceLine>StatIrcd = NoPic</SourceLine>
-   <SourceLine>StatWWW= NoPic</SourceLine>
-   <SourceLine>StatShout= NoPic</SourceLine>
-   <SourceLine>StatUserID= NoPic</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>DATsck.FollowRedirects = True</SourceLine>
    <SourceLine>End Sub</SourceLine>
@@ -919,48 +938,12 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub relitavity()</SourceLine>
-   <SourceLine>Username.textFont = ZTextFont</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>statusweb.Visible = (Username.top &lt; StatusWeb.Top) </SourceLine>
-   <SourceLine>StatTracker.Visible = statusweb.Visible</SourceLine>
-   <SourceLine>StatTrackerssl.Visible = statusweb.Visible</SourceLine>
-   <SourceLine>StatusTrackerIrcd.Visible =statusweb.Visible</SourceLine>
-   <SourceLine>StatusShout.Visible = statusweb.Visible</SourceLine>
-   <SourceLine>StatID.Visible = statusweb.Visible</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>If Me.Size.width &lt; Me.Size.height Then // portrait</SourceLine>
-   <SourceLine>Username.Width = (Me.Size.Width / 9)*7</SourceLine>
-   <SourceLine>Username.Left = (Me.Size.Width / 9) </SourceLine>
-   <SourceLine>Username.top = canvas1.Top + canvas1.Height + 20</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>//align in the dead center of the screen width</SourceLine>
-   <SourceLine>canvas1.Left = (Me.Size.Width / 2) - (canvas1.Width / 2)</SourceLine>
-   <SourceLine>//align slightly above center of screen height</SourceLine>
-   <SourceLine>canvas1.Top = (Me.Size.Height / 9)</SourceLine>
    <SourceLine>Else // landscape</SourceLine>
-   <SourceLine>Username.Left = (Me.Size.Width / 5)  * 2.5</SourceLine>
-   <SourceLine>Username.top = canvas1.Top</SourceLine>
-   <SourceLine>Username.Width = (Me.Size.Width / 9)*3.5</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>//align slightly left of center of the screen width</SourceLine>
-   <SourceLine>canvas1.Left = (Me.Size.Width / 15)</SourceLine>
-   <SourceLine>//align in the center of screen height</SourceLine>
-   <SourceLine>canvas1.Top = (Me.Size.Height / 2) - (canvas1.Height / 2)</SourceLine>
    <SourceLine>End If</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>statusweb.Left = Username.Left</SourceLine>
-   <SourceLine>StatTracker.Left = statusweb.Left + statusweb.width +15</SourceLine>
-   <SourceLine>StatTrackerssl.Left = StatTracker.Left + StatTracker.Width + 15</SourceLine>
-   <SourceLine>StatusTrackerIrcd.Left = StatTrackerssl.Left + StatTrackerssl.Width + 15</SourceLine>
-   <SourceLine>StatusShout.Left = StatusTrackerIrcd.Left + StatusTrackerIrcd.Width +15</SourceLine>
-   <SourceLine>StatID.Left = StatusShout.Left + StatusShout.Width + 15</SourceLine>
-   <SourceLine>statusweb.top = Self.size.Height - statusweb.Height - 50</SourceLine>
-   <SourceLine>StatTracker.top = statusweb.top</SourceLine>
-   <SourceLine>StatTrackerssl.top = statusweb.top</SourceLine>
-   <SourceLine>StatusTrackerIrcd.top =statusweb.top</SourceLine>
-   <SourceLine>StatusShout.top = statusweb.top</SourceLine>
-   <SourceLine>StatID.top = statusweb.top</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>h = Me.Size.Height</SourceLine>
    <SourceLine>w = Me.Size.Width</SourceLine>
@@ -983,6 +966,7 @@
    <SourceLine>Sub GetSomethin(act As String)</SourceLine>
    <SourceLine>DATsck.RequestHeader("Authorization") = apiKey</SourceLine>
    <SourceLine>DATsck.send("GET", REDbase + act)</SourceLine>
+   <SourceLine>system.DebugLog "^^^^^ " + act + " ^^^^^"</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -992,96 +976,6 @@
   <ItemParams>act As String</ItemParams>
   <ItemResult></ItemResult>
  </Method>
- <Property>
-  <ItemName>StatusTracker</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>938129407</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatusTracker As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatusTracker As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <Property>
-  <ItemName>StatIrcd</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>2126536703</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatIrcd As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatIrcd As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <Property>
-  <ItemName>StatusTrackerSSL</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>794994687</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatusTrackerSSL As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatusTrackerSSL As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <Property>
-  <ItemName>StatWWW</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>888897535</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatWWW As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatWWW As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <Property>
-  <ItemName>StatShout</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>5171199</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatShout As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatShout As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <Property>
-  <ItemName>StatUserID</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <PartID>1261447167</PartID>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>StatUserID As Picture</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>StatUserID As Picture</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
  <PropertyVal Name="Orientation">0</PropertyVal>
  <PropertyVal Name="HasBackButton">False</PropertyVal>
  <PropertyVal Name="Modal">False</PropertyVal>
@@ -1169,296 +1063,7 @@
  <MobileDeviceType>1</MobileDeviceType>
  <Orientation>0</Orientation>
  <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>560386047</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Assuming you have added an image named "MyImage" in your project</SourceLine>
-    <SourceLine>Var myImage As Picture = headphonesferofluid</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine>g.DrawPicture(myImage, 0, 0, 384,384,0,0,1024, 1024)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>//alignment</SourceLine>
-    <SourceLine>relitavity</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileTextField</Superclass>
-  <HookInstance>
-   <ItemName>TextChanged</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1111015423</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub TextChanged()</SourceLine>
-    <SourceLine>'ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
-    <SourceLine>If fz_.Exists Then fz_.Remove</SourceLine>
-    <SourceLine>Var fz2_ As TextOutputStream  = TextOutputStream.Create(fz_)</SourceLine>
-    <SourceLine>fz2_.write(Me.Text)</SourceLine>
-    <SourceLine>fz2_.Close</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
-  <HookInstance>
-   <ItemName>Opening</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1047476223</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Opening()</SourceLine>
-    <SourceLine>ZTextFont = New Font("Arial", 25)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
-    <SourceLine>If fz_.Exists Then</SourceLine>
-    <SourceLine>Var fz2_ As TextinputStream  = TextinputStream.Open(fz_)</SourceLine>
-    <SourceLine>Me.Text =  fz2_.readall</SourceLine>
-    <SourceLine>apiKey = Me.Text</SourceLine>
-    <SourceLine>fz2_.Close</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
-  <HookInstance>
-   <ItemName>ReturnPressed</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>368838655</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
-    <SourceLine>apiKey = Me.Text</SourceLine>
-    <SourceLine>GetSomethin("index")</SourceLine>
-    <SourceLine>End Function</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1871435775</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatusTracker, 0, 0, 48,48,0,0,512,512)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>Timer</Superclass>
-  <HookInstance>
-   <ItemName>Run</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>196329471</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Run()</SourceLine>
-    <SourceLine>statsck.Send("GET","https://red.trackerstatus.info/api/all/")</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>URLConnection</Superclass>
-  <HookInstance>
-   <ItemName>ContentReceived</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>378755071</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>// Variable for parsed JSON data</SourceLine>
-    <SourceLine>Var jsonData As JSONItem</SourceLine>
-    <SourceLine>Var g As JSONItem</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>// Check if HTTP request was successful</SourceLine>
-    <SourceLine>If (HTTPStatus = 200) Then</SourceLine>
-    <SourceLine>// Check if the correct URL was accessed</SourceLine>
-    <SourceLine>If (URL = "https://red.trackerstatus.info/api/all/") Then</SourceLine>
-    <SourceLine>Try</SourceLine>
-    <SourceLine>// Parse the JSON content</SourceLine>
-    <SourceLine>jsonData = New JSONItem(content)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>// Access JSON values (replace "Website" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("Website")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatWWW = ieblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatWWW = iered</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>Statusweb.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "TrackerHTTP" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("TrackerHTTP")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatusTracker = padlockulockblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatusTracker = padlockulockred</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>StatTracker.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "TrackerHTTPS" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("TrackerHTTPS")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatusTrackerSSL = padlockblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatusTrackerSSL = padlockred</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>StatTrackerSSL.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "IRC" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("IRC")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatIrcd = ircblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatIrcd = ircred</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>StatusTrackerIrcd.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "IRCTorrentAnnouncer" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("IRCTorrentAnnouncer")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatShout = shoutblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatShout = shoutred</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>StatusShout.Refresh</SourceLine>
-    <SourceLine>// Access JSON values (replace "IRCUserIdentifier" with the actual key in your JSON)</SourceLine>
-    <SourceLine>G =  jsonData.Value("IRCUserIdentifier")</SourceLine>
-    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
-    <SourceLine>StatUserID = idcardblue</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>StatUserID = idcardred</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine>StatID.Refresh</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>Catch e As JSONException</SourceLine>
-    <SourceLine>// Handle JSON parsing errors</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("Error parsing JSON data")</SourceLine>
-    <SourceLine>End Try</SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>// Optional: handle case where URL is not as expected</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("Unexpected URL accessed")</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>Else</SourceLine>
-    <SourceLine>// Handle HTTP request failure</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("HTTP request failed with status: " + HTTPStatus.ToString)</SourceLine>
-    <SourceLine>End If</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1003487231</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatusTrackerSSL, 0, 0, 48,48,0,0,512,512)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1960208383</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatIrcd, 0, 0, 48,48,0,0,512,512)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>635688959</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatWWW, 0, 0, 48,48,0,0,512,512)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1400416255</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatShout, 0, 0, 48,48,0,0,512,512)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
- </ControlBehavior>
- <ControlBehavior>
-  <Superclass>MobileCanvas</Superclass>
-  <HookInstance>
-   <ItemName>Paint</ItemName>
-   <Compatibility></Compatibility>
-   <Visible>1</Visible>
-   <PartID>1483413503</PartID>
-   <ItemSource>
-    <TextEncoding>134217984</TextEncoding>
-    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
-    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
-    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
-    <SourceLine></SourceLine>
-    <SourceLine>g.DrawPicture(StatUserID, 0, 0, 48,48,0,0,1536,1536)</SourceLine>
-    <SourceLine>End Sub</SourceLine>
-   </ItemSource>
-  </HookInstance>
+  <Superclass>MobileTabPanel</Superclass>
  </ControlBehavior>
  <ControlBehavior>
   <Superclass>URLConnection</Superclass>
@@ -1471,7 +1076,7 @@
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub Error(e As RuntimeException)</SourceLine>
     <SourceLine>#If DebugBuild Then</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("ERROR - #" + e.ErrorNumber.ToString + EndOfLine + e.Message)</SourceLine>
+    <SourceLine>system.DebugLog("ERROR - #" + e.ErrorNumber.ToString + EndOfLine + e.Message)</SourceLine>
     <SourceLine>#EndIf</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
@@ -1484,245 +1089,114 @@
    <ItemSource>
     <TextEncoding>134217984</TextEncoding>
     <SourceLine>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</SourceLine>
+    <SourceLine>System.DebugLog "[" + HTTPStatus.ToString + "] " + url</SourceLine>
+    <SourceLine>System.DebugLog content</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Variable for parsed JSON data</SourceLine>
+    <SourceLine>Var g1,g2 As Dictionary</SourceLine>
+    <SourceLine>Var g As Variant</SourceLine>
     <SourceLine>Var fff As String =url.Replace(REDbase,"")</SourceLine>
+    <SourceLine>If (fff.IndexOf(1,"&amp;") &gt; 0) Then</SourceLine>
+    <SourceLine>Var fff2() As String</SourceLine>
+    <SourceLine>fff2 = fff.Split("&amp;")</SourceLine>
+    <SourceLine>fff = fff2(0)</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
     <SourceLine>Select Case HTTPStatus</SourceLine>
     <SourceLine>Case 200</SourceLine>
+    <SourceLine>Try</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Parse the JSON string</SourceLine>
+    <SourceLine>g = ParseJSON(content)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Check if it's a Dictionary</SourceLine>
+    <SourceLine>If g IsA Dictionary Then</SourceLine>
+    <SourceLine>g1 = dictionary(g)</SourceLine>
+    <SourceLine>If g1.Value("status") = "success" Then</SourceLine>
+    <SourceLine>//If g1.HasKey("response") Then</SourceLine>
+    <SourceLine>g2 = dictionary(g1.Value("response"))</SourceLine>
+    <SourceLine>System.DebugLog "j"</SourceLine>
     <SourceLine>Select Case fff</SourceLine>
     <SourceLine>Case "index"</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] index")</SourceLine>
+    <SourceLine>System.DebugLog("*** index ***")</SourceLine>
+    <SourceLine>TabPanel1.AddPanel("Profile",Nil,New Container2)</SourceLine>
+    <SourceLine>Var fgh As String</SourceLine>
+    <SourceLine>fgh =  g2.Value("id").IntegerValue.ToString</SourceLine>
+    <SourceLine>redme.id = fgh</SourceLine>
+    <SourceLine>redme.Name = g2.Value("username").StringValue</SourceLine>
+    <SourceLine>GetSomethin("user&amp;id=" + REDme.id)</SourceLine>
+    <SourceLine>Case "user"</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Var x As UInt32 = 0</SourceLine>
+    <SourceLine>Do</SourceLine>
+    <SourceLine>system.DebugLog g2.key(x).StringValue</SourceLine>
+    <SourceLine>x = x + 1</SourceLine>
+    <SourceLine>Loop Until x &gt; g2.KeyCount - 1</SourceLine>
+    <SourceLine>Var socket As New URLConnection</SourceLine>
+    <SourceLine>Var imageData As MemoryBlock</SourceLine>
+    <SourceLine>Try</SourceLine>
+    <SourceLine>// Download the image as binary data</SourceLine>
+    <SourceLine>imageData = socket.SendSync("GET", g2.Value("id"), 10) // Timeout of 10 seconds</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Load the image into a Picture object</SourceLine>
+    <SourceLine>If imageData &lt;&gt; Nil Then</SourceLine>
+    <SourceLine>Var downloadedImage As Picture = Picture.FromData(imageData)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Store the Picture in a property to use in Canvas</SourceLine>
+    <SourceLine>'Self.myImage = downloadedImage</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Refresh the Canvas to display the image</SourceLine>
+    <SourceLine>'Canvas1.Invalidate</SourceLine>
     <SourceLine>Else</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] " + fff)</SourceLine>
+    <SourceLine>MessageBox("Failed to download image.")</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>Catch e As IOException</SourceLine>
+    <SourceLine>MessageBox("Error: " + e.Message)</SourceLine>
+    <SourceLine>End Try</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>System.DebugLog("*** " + fff + " ***")</SourceLine>
     <SourceLine>End Select</SourceLine>
     <SourceLine>Else</SourceLine>
-    <SourceLine>MobilePopupMessage.Show("[" + HTTPStatus.ToString + "] " + fff)</SourceLine>
+    <SourceLine>System.DebugLog("[F] " + fff)</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>End If </SourceLine>
+    <SourceLine>Catch JSONException</SourceLine>
+    <SourceLine>System.DebugLog("[E] " + fff)</SourceLine>
+    <SourceLine>End Try</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>system.DebugLog("[" + HTTPStatus.ToString + "] " + fff)</SourceLine>
     <SourceLine>End Select</SourceLine>
     <SourceLine>End Sub</SourceLine>
    </ItemSource>
   </HookInstance>
  </ControlBehavior>
  <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
+  <ControlClass>MobileTabPanel</ControlClass>
+  <ItemName>MobileTabPanel</ItemName>
   <PropertyVal Name="AccessibilityHint"></PropertyVal>
   <PropertyVal Name="AccessibilityLabel"></PropertyVal>
   <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">384</PropertyVal>
-  <PropertyVal Name="Left">-12</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Height">756</PropertyVal>
+  <PropertyVal Name="LastAddedPanelIndex">0</PropertyVal>
+  <PropertyVal Name="LayoutTabIndex">1</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
   <PropertyVal Name="LockLeft">True</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
   <PropertyVal Name="LockTop">True</PropertyVal>
-  <PropertyVal Name="Name">Canvas1</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Name">TabPanel1</PropertyVal>
+  <PropertyVal Name="PanelCount">0</PropertyVal>
+  <PropertyVal Name="Scope">0</PropertyVal>
+  <PropertyVal Name="SelectedPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Super">MobileTabPanel</PropertyVal>
+  <PropertyVal Name="Tabs"><Hex bytes="13">0A300A31393133333732363731</Hex></PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
   <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">384</PropertyVal>
+  <PropertyVal Name="Width">360</PropertyVal>
   <ControlIndex>0</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1574707199</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileTextField</ControlClass>
-  <ItemName>MobileTextField</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Alignment">1</PropertyVal>
-  <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">100</PropertyVal>
-  <PropertyVal Name="Hint">API Key</PropertyVal>
-  <PropertyVal Name="InputType">0</PropertyVal>
-  <PropertyVal Name="Left">52</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="MaximumCharactersAllowed">128</PropertyVal>
-  <PropertyVal Name="Name">Username</PropertyVal>
-  <PropertyVal Name="Password">True</PropertyVal>
-  <PropertyVal Name="ReadOnly">False</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="SelectedText"></PropertyVal>
-  <PropertyVal Name="SelectionLength">0</PropertyVal>
-  <PropertyVal Name="SelectionStart">0</PropertyVal>
-  <PropertyVal Name="Super">MobileTextField</PropertyVal>
-  <PropertyVal Name="Text"></PropertyVal>
-  <PropertyVal Name="TextColor">0</PropertyVal>
-  <PropertyVal Name="Top">392</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">256</PropertyVal>
-  <ControlIndex>1</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>279085055</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">60</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatTracker</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>2</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>127309823</PartID>
- </Control>
- <Control>
-  <ControlClass>Timer</ControlClass>
-  <ItemName>Timer</ItemName>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Left">0</PropertyVal>
-  <PropertyVal Name="Name">Status</PropertyVal>
-  <PropertyVal Name="PanelIndex">-1</PropertyVal>
-  <PropertyVal Name="Parent"></PropertyVal>
-  <PropertyVal Name="Period">5000</PropertyVal>
-  <PropertyVal Name="RunMode">2</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">Timer</PropertyVal>
-  <PropertyVal Name="Top">0</PropertyVal>
-  <ControlIndex>3</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>69531647</PartID>
- </Control>
- <Control>
-  <ControlClass>URLConnection</ControlClass>
-  <ItemName>URLConnection</ItemName>
-  <PropertyVal Name="AllowCertificateValidation">False</PropertyVal>
-  <PropertyVal Name="FollowRedirects">True</PropertyVal>
-  <PropertyVal Name="HTTPStatusCode">0</PropertyVal>
-  <PropertyVal Name="Left">0</PropertyVal>
-  <PropertyVal Name="Name">StatSck</PropertyVal>
-  <PropertyVal Name="PanelIndex">-1</PropertyVal>
-  <PropertyVal Name="Parent"></PropertyVal>
-  <PropertyVal Name="Password"></PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">URLConnection</PropertyVal>
-  <PropertyVal Name="Top">0</PropertyVal>
-  <PropertyVal Name="UserName"></PropertyVal>
-  <ControlIndex>4</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>717785087</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">100</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatTrackerSSL</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>5</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>482789375</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">140</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatusTrackerIrcd</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>6</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1216057343</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">20</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatusWeb</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>7</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>2076809215</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">180</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatusShout</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>8</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>366471167</PartID>
- </Control>
- <Control>
-  <ControlClass>MobileCanvas</ControlClass>
-  <ItemName>MobileCanvas</ItemName>
-  <PropertyVal Name="AccessibilityHint"></PropertyVal>
-  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
-  <PropertyVal Name="Enabled">True</PropertyVal>
-  <PropertyVal Name="Height">48</PropertyVal>
-  <PropertyVal Name="Left">220</PropertyVal>
-  <PropertyVal Name="LockBottom">False</PropertyVal>
-  <PropertyVal Name="LockLeft">False</PropertyVal>
-  <PropertyVal Name="LockRight">False</PropertyVal>
-  <PropertyVal Name="LockTop">False</PropertyVal>
-  <PropertyVal Name="Name">StatID</PropertyVal>
-  <PropertyVal Name="Scope">2</PropertyVal>
-  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
-  <PropertyVal Name="Top">662</PropertyVal>
-  <PropertyVal Name="Visible">True</PropertyVal>
-  <PropertyVal Name="Width">48</PropertyVal>
-  <ControlIndex>9</ControlIndex>
-  <Locked>1</Locked>
-  <PartID>1165967359</PartID>
+  <Locked>0</Locked>
+  <PartID>492023807</PartID>
  </Control>
  <Control>
   <ControlClass>URLConnection</ControlClass>
@@ -1739,7 +1213,7 @@
   <PropertyVal Name="Super">URLConnection</PropertyVal>
   <PropertyVal Name="Top">0</PropertyVal>
   <PropertyVal Name="UserName"></PropertyVal>
-  <ControlIndex>10</ControlIndex>
+  <ControlIndex>1</ControlIndex>
   <Locked>0</Locked>
   <PartID>459698175</PartID>
  </Control>
@@ -2428,6 +1902,1044 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
+<block type="MobileContainer" ID="1913372671">
+ <ObjName>Container1</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>MobileContainer</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <HookInstance>
+  <ItemName>Opening</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1694461951</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Opening()</SourceLine>
+   <SourceLine>StatusTracker = NoPic</SourceLine>
+   <SourceLine>StatusTrackerSSL = NoPic</SourceLine>
+   <SourceLine>StatIrcd = NoPic</SourceLine>
+   <SourceLine>StatWWW= NoPic</SourceLine>
+   <SourceLine>StatShout= NoPic</SourceLine>
+   <SourceLine>StatUserID= NoPic</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <Method>
+  <ItemName>relitavity</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1994866687</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub relitavity()</SourceLine>
+   <SourceLine>Username.textFont = ZTextFont</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>statusweb.Visible = (Username.top &lt; StatusWeb.Top) </SourceLine>
+   <SourceLine>StatTracker.Visible = statusweb.Visible</SourceLine>
+   <SourceLine>StatTrackerssl.Visible = statusweb.Visible</SourceLine>
+   <SourceLine>StatusTrackerIrcd.Visible =statusweb.Visible</SourceLine>
+   <SourceLine>StatusShout.Visible = statusweb.Visible</SourceLine>
+   <SourceLine>StatID.Visible = statusweb.Visible</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If Me.width &lt; Me.height Then // portrait</SourceLine>
+   <SourceLine>Username.Width = (Me.Width / 9)*7</SourceLine>
+   <SourceLine>Username.Left = (Me.Width / 9) </SourceLine>
+   <SourceLine>Username.top = canvas1.Top + canvas1.Height + 20</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>//align in the dead center of the screen width</SourceLine>
+   <SourceLine>canvas1.Left = (Me.Width / 2) - (canvas1.Width / 2)</SourceLine>
+   <SourceLine>//align slightly above center of screen height</SourceLine>
+   <SourceLine>canvas1.Top = (Me.Height / 9)</SourceLine>
+   <SourceLine>Else // landscape</SourceLine>
+   <SourceLine>Username.Left = (Me.Width / 5)  * 2.5</SourceLine>
+   <SourceLine>Username.top = canvas1.Top</SourceLine>
+   <SourceLine>Username.Width = (Me.Width / 9)*3.5</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>//align slightly left of center of the screen width</SourceLine>
+   <SourceLine>canvas1.Left = (Me.Width / 15)</SourceLine>
+   <SourceLine>//align in the center of screen height</SourceLine>
+   <SourceLine>canvas1.Top = (Me.Height / 2) - (canvas1.Height / 2)</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>statusweb.Left = Username.Left</SourceLine>
+   <SourceLine>StatTracker.Left = statusweb.Left + statusweb.width +15</SourceLine>
+   <SourceLine>StatTrackerssl.Left = StatTracker.Left + StatTracker.Width + 15</SourceLine>
+   <SourceLine>StatusTrackerIrcd.Left = StatTrackerssl.Left + StatTrackerssl.Width + 15</SourceLine>
+   <SourceLine>StatusShout.Left = StatusTrackerIrcd.Left + StatusTrackerIrcd.Width +15</SourceLine>
+   <SourceLine>StatID.Left = StatusShout.Left + StatusShout.Width + 15</SourceLine>
+   <SourceLine>statusweb.top = Self.Height - statusweb.Height - 50</SourceLine>
+   <SourceLine>StatTracker.top = statusweb.top</SourceLine>
+   <SourceLine>StatTrackerssl.top = statusweb.top</SourceLine>
+   <SourceLine>StatusTrackerIrcd.top =statusweb.top</SourceLine>
+   <SourceLine>StatusShout.top = statusweb.top</SourceLine>
+   <SourceLine>StatID.top = statusweb.top</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>h = Me.Height</SourceLine>
+   <SourceLine>w = Me.Width</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Property>
+  <ItemName>StatusTracker</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1497735167</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatusTracker As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatusTracker As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatIrcd</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1842954239</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatIrcd As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatIrcd As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatusTrackerSSL</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1118087167</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatusTrackerSSL As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatusTrackerSSL As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatWWW</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1446430719</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatWWW As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatWWW As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatShout</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>301588479</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatShout As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatShout As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>StatUserID</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1249372159</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>StatUserID As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>StatUserID As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+ <PropertyVal Name="AccessibilityHint"></PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="Enabled">True</PropertyVal>
+ <PropertyVal Name="LockBottom">False</PropertyVal>
+ <PropertyVal Name="LockTop">False</PropertyVal>
+ <PropertyVal Name="LockRight">False</PropertyVal>
+ <PropertyVal Name="LockLeft">False</PropertyVal>
+ <PropertyVal Name="Width">360</PropertyVal>
+ <PropertyVal Name="Height">740</PropertyVal>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>400</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>360</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockLeft</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockRight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockTop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockBottom</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Enabled</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AccessibilityHint</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AccessibilityLabel</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ControlCount</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <MobileDeviceType>1</MobileDeviceType>
+ <Orientation>0</Orientation>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1722353663</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Assuming you have added an image named "MyImage" in your project</SourceLine>
+    <SourceLine>Var myImage As Picture = headphonesferofluid</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine>g.DrawPicture(myImage, 0, 0, 384,384,0,0,1024, 1024)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>//alignment</SourceLine>
+    <SourceLine>relitavity</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileTextField</Superclass>
+  <HookInstance>
+   <ItemName>TextChanged</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>927174655</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub TextChanged()</SourceLine>
+    <SourceLine>'ValidateTextField(Me, "[A-Za-z0-9_?\.]{1,20}", color.black, Color.Red)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
+    <SourceLine>If fz_.Exists Then fz_.Remove</SourceLine>
+    <SourceLine>Var fz2_ As TextOutputStream  = TextOutputStream.Create(fz_)</SourceLine>
+    <SourceLine>fz2_.write(Me.Text)</SourceLine>
+    <SourceLine>fz2_.Close</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>Opening</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1869910015</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Opening()</SourceLine>
+    <SourceLine>ZTextFont = New Font("Arial", 25)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Var fz_ As FolderItem = SpecialFolder.ApplicationSupport.Child("auth.txt")</SourceLine>
+    <SourceLine>If fz_.Exists Then</SourceLine>
+    <SourceLine>Var fz2_ As TextinputStream  = TextinputStream.Open(fz_)</SourceLine>
+    <SourceLine>Me.Text =  fz2_.readall</SourceLine>
+    <SourceLine>apiKey = Me.Text</SourceLine>
+    <SourceLine>fz2_.Close</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <ItemName>ReturnPressed</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1778331647</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function ReturnPressed() As Boolean</SourceLine>
+    <SourceLine>apiKey = Me.Text</SourceLine>
+    <SourceLine>intro.GetSomethin("index")</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>984430591</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatusTracker, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>992190463</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatusTrackerSSL, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1042589695</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatIrcd, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>103036927</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatWWW, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1222414335</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatShout, 0, 0, 48,48,0,0,512,512)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1437202431</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>// Optionally, you can resize the image to fit within a specific area</SourceLine>
+    <SourceLine>// Draws the image to fit within a 100x100 area starting at (10,10)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>g.DrawPicture(StatUserID, 0, 0, 48,48,0,0,1536,1536)</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>Timer</Superclass>
+  <HookInstance>
+   <ItemName>Run</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>341608447</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Run()</SourceLine>
+    <SourceLine>statsck.Send("GET","https://red.trackerstatus.info/api/all/")</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>URLConnection</Superclass>
+  <HookInstance>
+   <ItemName>ContentReceived</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>122015743</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Variable for parsed JSON data</SourceLine>
+    <SourceLine>Var jsonData , g As JSONItem</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Check if HTTP request was successful</SourceLine>
+    <SourceLine>If (HTTPStatus = 200) Then</SourceLine>
+    <SourceLine>// Check if the correct URL was accessed</SourceLine>
+    <SourceLine>If (URL = "https://red.trackerstatus.info/api/all/") Then</SourceLine>
+    <SourceLine>Try</SourceLine>
+    <SourceLine>// Parse the JSON content</SourceLine>
+    <SourceLine>jsonData = New JSONItem(content)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>// Access JSON values (replace "Website" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("Website")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatWWW = ieblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatWWW = iered</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>Statusweb.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "TrackerHTTP" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("TrackerHTTP")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatusTracker = padlockulockblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatusTracker = padlockulockred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatTracker.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "TrackerHTTPS" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("TrackerHTTPS")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatusTrackerSSL = padlockblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatusTrackerSSL = padlockred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatTrackerSSL.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "IRC" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRC")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatIrcd = ircblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatIrcd = ircred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatusTrackerIrcd.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "IRCTorrentAnnouncer" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRCTorrentAnnouncer")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatShout = shoutblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatShout = shoutred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatusShout.Refresh</SourceLine>
+    <SourceLine>// Access JSON values (replace "IRCUserIdentifier" with the actual key in your JSON)</SourceLine>
+    <SourceLine>G =  jsonData.Value("IRCUserIdentifier")</SourceLine>
+    <SourceLine>If g.value("Status").BooleanValue Then</SourceLine>
+    <SourceLine>StatUserID = idcardblue</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>StatUserID = idcardred</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>StatID.Refresh</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Catch e As JSONException</SourceLine>
+    <SourceLine>// Handle JSON parsing errors</SourceLine>
+    <SourceLine>system.DebugLog("Error parsing JSON data")</SourceLine>
+    <SourceLine>End Try</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>// Optional: handle case where URL is not as expected</SourceLine>
+    <SourceLine>system.DebugLog("Unexpected URL accessed")</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>// Handle HTTP request failure</SourceLine>
+    <SourceLine>system.DebugLog("HTTP request failed with status: " + HTTPStatus.ToString)</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">384</PropertyVal>
+  <PropertyVal Name="Left">-12</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="Name">Canvas1</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">384</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>285358079</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileTextField</ControlClass>
+  <ItemName>MobileTextField</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Alignment">1</PropertyVal>
+  <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">100</PropertyVal>
+  <PropertyVal Name="Hint">API Key</PropertyVal>
+  <PropertyVal Name="InputType">0</PropertyVal>
+  <PropertyVal Name="Left">52</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">128</PropertyVal>
+  <PropertyVal Name="Name">Username</PropertyVal>
+  <PropertyVal Name="Password">True</PropertyVal>
+  <PropertyVal Name="ReadOnly">False</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="SelectedText"></PropertyVal>
+  <PropertyVal Name="SelectionLength">0</PropertyVal>
+  <PropertyVal Name="SelectionStart">0</PropertyVal>
+  <PropertyVal Name="Super">MobileTextField</PropertyVal>
+  <PropertyVal Name="Text"></PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="Top">392</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">256</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>691707903</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">75</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatTracker</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>2</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>501135359</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">130</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatTrackerSSL</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>3</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>616710143</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">184</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatusTrackerIrcd</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>4</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1841500159</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatusWeb</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>5</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>415275007</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">238</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatusShout</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>6</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>2105960447</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">48</PropertyVal>
+  <PropertyVal Name="Left">292</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">StatID</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">662</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">48</PropertyVal>
+  <ControlIndex>7</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1126719487</PartID>
+ </Control>
+ <Control>
+  <ControlClass>Timer</ControlClass>
+  <ItemName>Timer</ItemName>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="Left">180</PropertyVal>
+  <PropertyVal Name="Name">Status</PropertyVal>
+  <PropertyVal Name="PanelIndex">-1</PropertyVal>
+  <PropertyVal Name="Parent"></PropertyVal>
+  <PropertyVal Name="Period">5000</PropertyVal>
+  <PropertyVal Name="RunMode">2</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">Timer</PropertyVal>
+  <PropertyVal Name="Top">190</PropertyVal>
+  <PropertyVal Name="Width">32</PropertyVal>
+  <ControlIndex>8</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1665232895</PartID>
+ </Control>
+ <Control>
+  <ControlClass>URLConnection</ControlClass>
+  <ItemName>URLConnection</ItemName>
+  <PropertyVal Name="AllowCertificateValidation">False</PropertyVal>
+  <PropertyVal Name="FollowRedirects">True</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="HTTPStatusCode">0</PropertyVal>
+  <PropertyVal Name="Left">200</PropertyVal>
+  <PropertyVal Name="Name">StatSck</PropertyVal>
+  <PropertyVal Name="PanelIndex">-1</PropertyVal>
+  <PropertyVal Name="Parent"></PropertyVal>
+  <PropertyVal Name="Password"></PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">URLConnection</PropertyVal>
+  <PropertyVal Name="Top">210</PropertyVal>
+  <PropertyVal Name="UserName"></PropertyVal>
+  <PropertyVal Name="Width">32</PropertyVal>
+  <ControlIndex>9</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1239474175</PartID>
+ </Control>
+</block>
+<block type="MobileContainer" ID="533829631">
+ <ObjName>Container2</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>MobileContainer</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Property>
+  <ItemName>myImage</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <PartID>1516240895</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>myImage As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>myImage As Picture</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+ <PropertyVal Name="AccessibilityHint"></PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="Enabled">True</PropertyVal>
+ <PropertyVal Name="LockBottom">False</PropertyVal>
+ <PropertyVal Name="LockTop">False</PropertyVal>
+ <PropertyVal Name="LockRight">False</PropertyVal>
+ <PropertyVal Name="LockLeft">False</PropertyVal>
+ <PropertyVal Name="Width">360</PropertyVal>
+ <PropertyVal Name="Height">752</PropertyVal>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>400</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>360</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockLeft</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockRight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockTop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockBottom</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Enabled</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AccessibilityHint</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AccessibilityLabel</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>UI Control</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ControlCount</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>myImage</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Picture</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+ <MobileDeviceType>1</MobileDeviceType>
+ <Orientation>0</Orientation>
+ <ControlBehavior>
+  <Superclass>MobileCanvas</Superclass>
+  <HookInstance>
+   <ItemName>Paint</ItemName>
+   <Compatibility></Compatibility>
+   <Visible>1</Visible>
+   <PartID>1772959743</PartID>
+   <ItemSource>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Paint(g As Graphics)</SourceLine>
+    <SourceLine>If myImage &lt;&gt; Nil Then</SourceLine>
+    <SourceLine>// Draw the image to fit the Canvas</SourceLine>
+    <SourceLine>g.DrawPicture(myImage, 0, 0, g.Width, g.Height, 0, 0, myImage.Width, myImage.Height)</SourceLine>
+    <SourceLine>Else</SourceLine>
+    <SourceLine>g.DrawText("No image loaded", 10, 20)</SourceLine>
+    <SourceLine>End If</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <Superclass>MobileTextArea</Superclass>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>MobileCanvas</ControlClass>
+  <ItemName>MobileCanvas</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">100</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="Name">Canvas1</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="Super">MobileCanvas</PropertyVal>
+  <PropertyVal Name="Top">30</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">100</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1902024703</PartID>
+ </Control>
+ <Control>
+  <ControlClass>MobileTextArea</ControlClass>
+  <ItemName>MobileTextArea</ItemName>
+  <PropertyVal Name="AccessibilityHint"></PropertyVal>
+  <PropertyVal Name="AccessibilityLabel"></PropertyVal>
+  <PropertyVal Name="Alignment">0</PropertyVal>
+  <PropertyVal Name="AllowSpellChecking">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Height">100</PropertyVal>
+  <PropertyVal Name="Left">128</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="MaximumCharactersAllowed">0</PropertyVal>
+  <PropertyVal Name="Name">TextArea1</PropertyVal>
+  <PropertyVal Name="ReadOnly">True</PropertyVal>
+  <PropertyVal Name="Scope">2</PropertyVal>
+  <PropertyVal Name="SelectedText"></PropertyVal>
+  <PropertyVal Name="SelectionLength">0</PropertyVal>
+  <PropertyVal Name="SelectionStart">0</PropertyVal>
+  <PropertyVal Name="Super">MobileTextArea</PropertyVal>
+  <PropertyVal Name="Text"></PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="Top">30</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Width">200</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+  <Locked>0</Locked>
+  <PartID>1134721023</PartID>
+ </Control>
+</block>
 <block type="UIState" ID="0">
  <WarningPreferences>
   <ItemName>5</ItemName>
@@ -2446,17 +2958,51 @@
   <ItemData>0</ItemData>
  </WarningPreferences>
  <IOSDebugDevice>Google Pixel 8 Pro (USB)</IOSDebugDevice>
+ <BreakPointGroup>
+  <PartID>1812776959</PartID>
+  <ItemName>DATsck</ItemName>
+  <UnitType>Event Handler</UnitType>
+  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
+  <lineNum>35</lineNum>
+ </BreakPointGroup>
+ <BreakPointGroup>
+  <PartID>1812776959</PartID>
+  <ItemName>DATsck</ItemName>
+  <UnitType>Event Handler</UnitType>
+  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
+  <lineNum>36</lineNum>
+ </BreakPointGroup>
+ <BreakPointGroup>
+  <PartID>1812776959</PartID>
+  <ItemName>DATsck</ItemName>
+  <UnitType>Event Handler</UnitType>
+  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
+  <lineNum>44</lineNum>
+ </BreakPointGroup>
+ <BreakPointGroup>
+  <PartID>1812776959</PartID>
+  <ItemName>DATsck</ItemName>
+  <UnitType>Event Handler</UnitType>
+  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
+  <lineNum>76</lineNum>
+ </BreakPointGroup>
+ <BreakPointGroup>
+  <PartID>1812776959</PartID>
+  <ItemName>DATsck</ItemName>
+  <UnitType>Event Handler</UnitType>
+  <UnitID>Sub ContentReceived(URL As String, HTTPStatus As Integer, content As String)</UnitID>
+  <lineNum>77</lineNum>
+ </BreakPointGroup>
  <StudioWindowState>
-  <EditBounds><Rect left="254" top="89" width="1013" height="806"/></EditBounds>
-  <WindowMaximized>0</WindowMaximized>
+  <EditBounds><Rect left="-7" top="-7" width="1934" height="1046"/></EditBounds>
+  <WindowMaximized>1</WindowMaximized>
   <Editors>
    <EditorCount>1</EditorCount>
    <Editor>
     <EditorIndex>0</EditorIndex>
-    <EditorLocation>Globz.GACC</EditorLocation>
-    <EditorPath></EditorPath>
-    <EditingPartID>358049791</EditingPartID>
-    <EditorPath></EditorPath>
+    <EditorLocation></EditorLocation>
+    <EditorPath>Intro.</EditorPath>
+    <EditorPath>Intro.</EditorPath>
    </Editor>
    <SelectedTab>0</SelectedTab>
   </Editors>
